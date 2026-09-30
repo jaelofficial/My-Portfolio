@@ -33,38 +33,36 @@ a {
   text-decoration: none;
 }
 
-/* Outer Canvas Shell */
+/* Full-Width Canvas Shell & Hero Section */
 .portfolio-shell {
+  width: 100%;
   min-height: 100vh;
-  padding: 42px 36px;
+  padding: 0;
   background: var(--blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   transition: background 0.3s ease;
 }
 
-/* Rounded Showcase Card (Layer 1: Blue Background) */
+/* Full-Width Showcase Hero (Layer 1: Blue Background) */
 .portfolio-card {
-  width: min(1360px, 100%);
-  height: min(710px, calc(100vh - 84px));
-  min-height: 620px;
+  width: 100%;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
-  border-radius: 26px;
+  border-radius: 0;
   background: var(--blue);
-  box-shadow: 0 25px 60px -12px rgba(18, 38, 64, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: none;
   transition: background 0.3s ease;
 }
 
 /* Layer 2: Hero Portrait Visual (Middle layer between blue background and white wave) */
 .hero-image {
   position: absolute;
-  right: 55px;
+  right: clamp(24px, 5vw, 90px);
   bottom: 0;
-  width: 490px;
-  height: 89%;
-  max-height: 625px;
+  width: min(560px, 44vw);
+  height: 90%;
+  max-height: 720px;
   z-index: 2;
   display: flex;
   align-items: flex-end;
@@ -102,8 +100,8 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  height: 84px;
-  padding: 0 76px;
+  height: 88px;
+  padding: 0 clamp(32px, 6vw, 100px);
   z-index: 10;
   display: flex;
   align-items: center;
@@ -182,16 +180,16 @@ a {
 .hero {
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   z-index: 4;
   display: flex;
   align-items: center;
-  padding: 50px 76px 0;
+  padding: 88px clamp(32px, 6vw, 100px) 40px;
   pointer-events: none;
 }
 
 .hero-copy {
-  width: min(580px, 54%);
+  width: min(600px, 52%);
   padding-bottom: 24px;
   pointer-events: auto;
 }
@@ -414,7 +412,7 @@ body.dark-mode .portfolio-shell {
 
 body.dark-mode .portfolio-card {
   background: #223753;
-  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  box-shadow: none;
 }
 
 body.dark-mode .hero-wave path {
@@ -543,20 +541,12 @@ body.dark-mode .toggle-thumb {
 
 /* Responsive Breakpoints */
 @media (max-width: 1100px) {
-  .portfolio-shell {
-    padding: 24px;
-  }
-
-  .portfolio-card {
-    height: 650px;
-  }
-
   .site-header {
-    padding: 0 50px;
+    padding: 0 40px;
   }
 
   .hero {
-    padding: 40px 50px 0;
+    padding: 88px 40px 40px;
   }
 
   .hero-copy {
@@ -565,22 +555,22 @@ body.dark-mode .toggle-thumb {
 
   .hero-image {
     right: 20px;
-    width: 440px;
-    height: 84%;
+    width: min(480px, 45vw);
+    height: 86%;
   }
 }
 
 @media (max-width: 860px) {
   .portfolio-shell {
-    padding: 12px;
+    padding: 0;
     display: block;
   }
 
   .portfolio-card {
     width: 100%;
-    min-height: 820px;
+    min-height: auto;
     height: auto;
-    border-radius: 20px;
+    border-radius: 0;
   }
 
   .site-header {
