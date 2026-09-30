@@ -11,127 +11,65 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Jael Dede Amoo home"></a>
+  <main class="portfolio-shell">
+    <div class="portfolio-card">
+      <header class="site-header">
+        <a class="brand-name" href="#home" aria-label="Jael Dede Amoo home">Jael Dede Amoo</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#portfolio">Projects</a>
+          <a href="contact.html">Contact</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span id="theme-icon" aria-hidden="true">☾</span></button>
+        </nav>
+      </header>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="./contact.html">Contact</a>
-    </nav>
+      <section class="hero" id="home">
+        <svg class="hero-shape" viewBox="0 0 1290 660" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 0H750C758 72 757 139 731 190C708 236 664 270 650 324C632 393 686 427 782 448C875 469 894 509 961 539C1043 576 1081 660 1187 660H0Z" />
+        </svg>
 
-    <div class="header-actions">
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
-        <span id="theme-icon" aria-hidden="true">☾</span>
-      </button>
-      <a class="button button-small" href="contact.html">Hire Me</a>
+        <div class="hero-copy">
+          <div class="eyebrow">CYBERSECURITY &amp; AI ENGINEER</div>
+          <h1>Hello, my name<br />is Jael Dede Amoo</h1>
+          <p>I build practical, secure and intelligent technology solutions with a focus on cybersecurity, AI engineering, automation and modern infrastructure.</p>
+          <div class="hero-buttons">
+            <a class="button primary-button" href="#portfolio">Projects</a>
+            <a class="button outline-button" href="https://www.linkedin.com/in/jael-amoo" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="hero-person.jpg" alt="Jael Dede Amoo" />
+        </div>
+      </section>
     </div>
-  </header>
+  </main>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="social-rail" aria-label="Social links">
-        <a href="https://www.linkedin.com/in/jael-amoo" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
-        <a href="mailto:amoojael87@gmail.com" aria-label="Email">@</a>
-        <a href="https://github.com/jaelofficial" target="_blank" rel="noreferrer" aria-label="GitHub">◎</a>
-        <a href="https://github.com/jaelofficial" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
-      </div>
-
-      <div class="hero-copy">
-        <h1>I'm Cybersecurity &amp; AI Engineer<br />Jael Dede Amoo</h1>
-        <p>
-          I build practical, secure and intelligent technology solutions, with a focus
-          on cybersecurity, AI engineering, automation and modern infrastructure.
-        </p>
-        <a class="button learn-button" href="#about">Learn more</a>
-      </div>
-
-      <div class="hero-image">
-        <img src="hero-person.jpg" alt="" />
-      </div>
-    </section>
-
-    <section class="content-section" id="about">
+  <section class="below-content" id="about">
+    <div class="content-section">
       <div class="section-label">ABOUT</div>
       <h2>Cybersecurity, AI and practical engineering.</h2>
       <div class="two-column">
-        <p>
-          I’m currently completing a BSc. in Computer Science (Cyber Security) at
-          Ghana Communication Technology University. My interests span network
-          security, system administration, digital infrastructure protection,
-          artificial intelligence and automation.
-        </p>
-        <p>
-          I enjoy understanding how systems work, identifying where they can fail,
-          and building practical solutions that make technology more useful and secure.
-        </p>
+        <p>I’m currently completing a BSc. in Computer Science (Cyber Security) at Ghana Communication Technology University. My interests span network security, system administration, digital infrastructure protection, artificial intelligence and automation.</p>
+        <p>I enjoy understanding how systems work, identifying where they can fail, and building practical solutions that make technology more useful and secure.</p>
       </div>
-    </section>
+    </div>
 
-    <section class="content-section" id="portfolio">
-      <div class="section-label">EXPERIENCE</div>
+    <div class="content-section" id="portfolio">
+      <div class="section-label">PROJECTS &amp; EXPERIENCE</div>
       <h2>Practical work and experience.</h2>
-
       <div class="experience-list">
-        <article>
-          <span>Sep 2025 — Oct 2025</span>
-          <div>
-            <h3>AI Engineer Intern</h3>
-            <strong>AMS1ONE Solutions</strong>
-            <p>Worked with AI engineering workflows, intelligent system models, automation pipelines and data-driven problem solving.</p>
-          </div>
-        </article>
-
-        <article>
-          <span>Sep 2025 — Nov 2025</span>
-          <div>
-            <h3>Information Technology Intern</h3>
-            <strong>iSERD</strong>
-            <p>Supported ERP deployment and customization while gaining practical exposure to IT infrastructure, system integration and enterprise information systems.</p>
-          </div>
-        </article>
-
-        <article>
-          <span>Educational Site Study</span>
-          <div>
-            <h3>Technical Industrial Immersion</h3>
-            <strong>Onix Data Centre — Tier-IV Facility</strong>
-            <p>Observed fault-tolerant infrastructure, physical and perimeter access controls, power redundancy and server hall monitoring.</p>
-          </div>
-        </article>
+        <article><span>Sep 2025 — Oct 2025</span><div><h3>AI Engineer Intern</h3><strong>AMS1ONE Solutions</strong><p>Worked with AI engineering workflows, intelligent system models, automation pipelines and data-driven problem solving.</p></div></article>
+        <article><span>Sep 2025 — Nov 2025</span><div><h3>Information Technology Intern</h3><strong>iSERD</strong><p>Supported ERP deployment and customization while gaining practical exposure to IT infrastructure, system integration and enterprise information systems.</p></div></article>
+        <article><span>Educational Site Study</span><div><h3>Technical Industrial Immersion</h3><strong>Onix Data Centre — Tier-IV Facility</strong><p>Observed fault-tolerant infrastructure, physical and perimeter access controls, power redundancy and server hall monitoring.</p></div></article>
       </div>
-    </section>
-
-    <section class="content-section" id="skills">
-      <div class="section-label">SKILLS</div>
-      <h2>What I work with.</h2>
-      <div class="skill-grid">
-        <div><b>Cybersecurity</b><span>Network security, vulnerability awareness, system auditing and secure configuration.</span></div>
-        <div><b>AI &amp; Automation</b><span>AI engineering, model integration, Python scripting, automation and data workflows.</span></div>
-        <div><b>Networking</b><span>TCP/IP, SSH, VLANs, network setup and troubleshooting.</span></div>
-        <div><b>Programming</b><span>Python, C++, Linux and Windows.</span></div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div>
-        <div class="section-label">CONTACT</div>
-        <h2>Let’s work together.</h2>
-      </div>
-      <div class="contact-details">
-        <a href="mailto:amoojael87@gmail.com">amoojael87@gmail.com</a>
-        <a href="tel:+233248283682">+233 24 828 3682</a>
-        <span>Accra, Ghana</span>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
     <span>© <span id="year"></span> Jael Dede Amoo</span>
     <span>Cybersecurity &amp; AI Engineer</span>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
