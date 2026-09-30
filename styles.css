@@ -44,7 +44,7 @@ a {
   transition: background 0.3s ease;
 }
 
-/* Rounded Showcase Card */
+/* Rounded Showcase Card (Layer 1: Blue Background) */
 .portfolio-card {
   width: min(1360px, 100%);
   height: min(710px, calc(100vh - 84px));
@@ -52,27 +52,51 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: 26px;
-  background: var(--ivory-card);
+  background: var(--blue);
   box-shadow: 0 25px 60px -12px rgba(18, 38, 64, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
   transition: background 0.3s ease;
 }
 
-/* Wave Background SVG */
+/* Layer 2: Hero Portrait Visual (Middle layer between blue background and white wave) */
+.hero-image {
+  position: absolute;
+  right: 55px;
+  bottom: 0;
+  width: 490px;
+  height: 89%;
+  max-height: 625px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  filter: drop-shadow(0 15px 30px rgba(10, 24, 43, 0.18));
+}
+
+/* Layer 3: White/Ivory Curved Wave (Top layer covering left side and sweeping over bottom of picture) */
 .hero-wave {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
 }
 
 .hero-wave path {
-  fill: var(--blue);
+  fill: var(--ivory-card);
   transition: fill 0.3s ease;
 }
 
-/* Header Navbar */
+/* Layer 4: Header Navbar (Interactive top layer) */
 .site-header {
   position: absolute;
   top: 0;
@@ -154,21 +178,22 @@ a {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, color 0.3s ease;
 }
 
-/* Hero Section */
+/* Layer 4: Hero Content / Copy */
 .hero {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   align-items: center;
   padding: 50px 76px 0;
+  pointer-events: none;
 }
 
 .hero-copy {
   width: min(580px, 54%);
-  z-index: 4;
   padding-bottom: 24px;
+  pointer-events: auto;
 }
 
 .eyebrow {
@@ -283,30 +308,6 @@ a {
   justify-content: center;
 }
 
-/* Hero Portrait Visual */
-.hero-image {
-  position: absolute;
-  right: 50px;
-  bottom: 0;
-  width: 490px;
-  height: 87%;
-  max-height: 600px;
-  z-index: 3;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: bottom center;
-  display: block;
-  filter: drop-shadow(0 15px 30px rgba(10, 24, 43, 0.18));
-}
-
 /* Below Content Sections */
 .below-content {
   background: var(--background);
@@ -412,11 +413,12 @@ body.dark-mode .portfolio-shell {
 }
 
 body.dark-mode .portfolio-card {
+  background: #223753;
   box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
 }
 
 body.dark-mode .hero-wave path {
-  fill: #223753;
+  fill: #142236;
 }
 
 body.dark-mode .brand-name {

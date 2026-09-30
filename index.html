@@ -13,16 +13,26 @@
 <body>
   <main class="portfolio-shell">
     <div class="portfolio-card">
-      <!-- Wave background SVG -->
+      <!-- Layer 1: Blue background provided by .portfolio-card -->
+
+      <!-- Layer 2: Picture (Middle layer) -->
+      <div class="hero-image">
+        <img src="hero-person.png" alt="Jael Dede Amoo — Cybersecurity &amp; AI Engineer" />
+      </div>
+
+      <!-- Layer 3: White/Ivory curved wave (Top layer - covers left side and sweeps over bottom of picture) -->
       <svg class="hero-wave" viewBox="0 0 1440 760" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M 815,0 
+        <path d="M 0,0 
+                 L 815,0 
                  C 835,100 825,210 785,290 
                  C 745,370 714,410 714,460 
                  C 714,530 765,600 870,645 
                  C 1020,705 1220,725 1440,750 
-                 L 1440,0 Z" />
+                 L 1440,760 
+                 L 0,760 Z" />
       </svg>
 
+      <!-- Layer 4: Header Navigation (Interactive top layer) -->
       <header class="site-header">
         <a class="brand-name" href="#home">Jael Dede Amoo</a>
         <nav class="nav" aria-label="Primary navigation">
@@ -45,6 +55,7 @@
         </nav>
       </header>
 
+      <!-- Layer 4: Hero Content / Copy (Interactive top layer) -->
       <section class="hero" id="home">
         <div class="hero-copy">
           <div class="eyebrow">CYBERSECURITY &amp; AI ENGINEER</div>
@@ -66,10 +77,6 @@
               </span>
             </a>
           </div>
-        </div>
-
-        <div class="hero-image">
-          <img src="hero-person.png" alt="Jael Dede Amoo — Cybersecurity &amp; AI Engineer" />
         </div>
       </section>
     </div>
