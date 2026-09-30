@@ -7,35 +7,71 @@
   <title>Jael Dede Amoo | Cybersecurity & AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="portfolio-shell">
     <div class="portfolio-card">
+      <!-- Wave background SVG -->
+      <svg class="hero-wave" viewBox="0 0 1440 760" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 815,0 
+                 C 835,100 825,210 785,290 
+                 C 745,370 714,410 714,460 
+                 C 714,530 765,600 870,645 
+                 C 1020,705 1220,725 1440,750 
+                 L 1440,0 Z" />
+      </svg>
+
       <header class="site-header">
-  <a class="brand-name" href="#home">Jael Dede Amoo</a>
-  <nav class="nav" aria-label="Primary navigation">
-    <a href="#about">About</a>
-    <a href="#portfolio">Projects</a>
-    <a href="contact.html">Contact</a>
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span id="theme-icon" aria-hidden="true">☾</span></button>
-  </nav>
-</header>
+        <a class="brand-name" href="#home">Jael Dede Amoo</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#portfolio">Projects</a>
+          <a href="contact.html">Contact</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+            <span class="toggle-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"></path>
+              </svg>
+            </span>
+            <span class="toggle-thumb" aria-hidden="true">
+              <svg class="thumb-moon" viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+          </button>
+        </nav>
+      </header>
 
       <section class="hero" id="home">
-  <div class="hero-ivory"></div>
-  <div class="hero-copy">
-    <div class="eyebrow">CYBERSECURITY &amp; AI ENGINEER</div>
-    <h1>Hello, my name<br />is Jael Dede Amoo</h1>
-    <p>I build practical, secure and intelligent technology solutions with a focus on cybersecurity, AI engineering, automation and modern infrastructure.</p>
-    <div class="hero-buttons">
-      <a class="button primary-button" href="#portfolio">Projects <span>→</span></a>
-      <a class="button outline-button" href="https://www.linkedin.com/in/jael-amoo" target="_blank" rel="noreferrer">LinkedIn <span class="linkedin-mark">in</span></a>
-    </div>
-  </div>
-  <div class="hero-image"><img src="hero-person.jpg" alt="Jael Dede Amoo" /></div>
-</section>
+        <div class="hero-copy">
+          <div class="eyebrow">CYBERSECURITY &amp; AI ENGINEER</div>
+          <h1 class="hero-title">
+            <span class="hero-greeting">Hello, my name is</span>
+            <span class="hero-name">Jael Dede Amoo</span>
+          </h1>
+          <p class="hero-description">
+            I'm a cybersecurity and AI engineer, passionate about building secure systems, intelligent solutions and automation that make a real difference. I enjoy solving problems, learning new technologies, and creating technology that's both useful and secure.
+          </p>
+          <div class="hero-buttons">
+            <a class="button primary-button" href="#portfolio">Projects <span class="btn-arrow" aria-hidden="true">→</span></a>
+            <a class="button outline-button" href="https://www.linkedin.com/in/jael-amoo" target="_blank" rel="noreferrer">
+              LinkedIn
+              <span class="linkedin-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.55a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="hero-person.png" alt="Jael Dede Amoo — Cybersecurity &amp; AI Engineer" />
+        </div>
+      </section>
     </div>
   </main>
 
@@ -53,9 +89,30 @@
       <div class="section-label">PROJECTS &amp; EXPERIENCE</div>
       <h2>Practical work and experience.</h2>
       <div class="experience-list">
-        <article><span>Sep 2025 — Oct 2025</span><div><h3>AI Engineer Intern</h3><strong>AMS1ONE Solutions</strong><p>Worked with AI engineering workflows, intelligent system models, automation pipelines and data-driven problem solving.</p></div></article>
-        <article><span>Sep 2025 — Nov 2025</span><div><h3>Information Technology Intern</h3><strong>iSERD</strong><p>Supported ERP deployment and customization while gaining practical exposure to IT infrastructure, system integration and enterprise information systems.</p></div></article>
-        <article><span>Educational Site Study</span><div><h3>Technical Industrial Immersion</h3><strong>Onix Data Centre — Tier-IV Facility</strong><p>Observed fault-tolerant infrastructure, physical and perimeter access controls, power redundancy and server hall monitoring.</p></div></article>
+        <article>
+          <span>Sep 2025 — Oct 2025</span>
+          <div>
+            <h3>AI Engineer Intern</h3>
+            <strong>AMS1ONE Solutions</strong>
+            <p>Worked with AI engineering workflows, intelligent system models, automation pipelines and data-driven problem solving.</p>
+          </div>
+        </article>
+        <article>
+          <span>Sep 2025 — Nov 2025</span>
+          <div>
+            <h3>Information Technology Intern</h3>
+            <strong>iSERD</strong>
+            <p>Supported ERP deployment and customization while gaining practical exposure to IT infrastructure, system integration and enterprise information systems.</p>
+          </div>
+        </article>
+        <article>
+          <span>Educational Site Study</span>
+          <div>
+            <h3>Technical Industrial Immersion</h3>
+            <strong>Onix Data Centre — Tier-IV Facility</strong>
+            <p>Observed fault-tolerant infrastructure, physical and perimeter access controls, power redundancy and server hall monitoring.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -64,6 +121,7 @@
     <span>© <span id="year"></span> Jael Dede Amoo</span>
     <span>Cybersecurity &amp; AI Engineer</span>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
