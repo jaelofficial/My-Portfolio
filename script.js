@@ -142,12 +142,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (scrollTopBtn) {
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollTopBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Use both scrolling roots for reliable behavior across browsers/mobile.
+      document.documentElement.style.scrollBehavior = "smooth";
+      document.body.style.scrollBehavior = "smooth";
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
     });
   }
 
   window.addEventListener("scroll", updateScrollTopButton, { passive: true });
+  window.addEventListener("resize", updateScrollTopButton, { passive: true });
   updateScrollTopButton();
 
   // 5. Robust Section-by-Section Reveal Engine (Mobile + Desktop)
