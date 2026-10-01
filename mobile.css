@@ -1,0 +1,805 @@
+/* ==========================================================================
+   mobile.css — Mobile-First Responsive Engine
+   Clean, professional mobile hero with stacked vertical layout
+   ========================================================================== */
+
+@media screen and (max-width: 860px) {
+
+  /* ── 1. Global Touch Scroll ─────────────────────────────────── */
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── 2. Full-Screen Section Stages ──────────────────────────── */
+  .full-section {
+    width: 100%;
+    min-height: 100svh;
+    min-height: 100vh;
+    position: relative;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 70px 20px 32px;
+  }
+
+  .stage-section {
+    padding: 70px 20px 32px;
+  }
+
+  .stage-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-bg-deco {
+    position: absolute;
+    top: 55px;
+    right: 16px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .deco-number {
+    font-size: clamp(80px, 22vw, 140px);
+    opacity: 0.04;
+    transform: translateY(calc(var(--mobile-deco-y, 0px) * 0.16));
+  }
+
+  .section-header {
+    margin-bottom: 18px;
+  }
+
+  .section-badge {
+    font-size: 10.5px;
+    letter-spacing: 0.11em;
+    margin-bottom: 6px;
+  }
+
+  .section-title {
+    font-size: clamp(22px, 6vw, 30px);
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 5px;
+  }
+
+  /* ── 3. Header & Hamburger Menu ─────────────────────────────── */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 0;
+    background: var(--header-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--line);
+    z-index: 1500;
+  }
+
+  .header-container {
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-name {
+    font-size: 15px;
+    gap: 6px;
+  }
+
+  .brand-role-badge {
+    font-size: 9.5px;
+    padding: 2px 7px;
+  }
+
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .theme-toggle {
+    width: 46px;
+    height: 24px;
+    padding: 2px;
+  }
+
+  .toggle-sun { width: 16px; height: 16px; }
+  .toggle-thumb { width: 18px; height: 18px; }
+  body.dark-mode .toggle-thumb { transform: translateX(-22px); }
+
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4.5px;
+    width: 36px;
+    height: 36px;
+    padding: 7px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    cursor: pointer;
+    z-index: 1600;
+  }
+
+  .hamburger-line {
+    width: 100%;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+  }
+
+  .mobile-menu-btn.is-active .top {
+    transform: translateY(6.5px) rotate(45deg);
+    background: var(--blue);
+  }
+  .mobile-menu-btn.is-active .mid {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .mobile-menu-btn.is-active .bot {
+    transform: translateY(-6.5px) rotate(-45deg);
+    background: var(--blue);
+  }
+
+  /* Navigation Drawer */
+  .nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--bg-card-hover);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 14px 18px 20px;
+    gap: 6px;
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    z-index: 1400;
+  }
+
+  .nav.mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-heading);
+    padding: 11px 14px;
+    border-radius: 10px;
+    background: rgba(74, 117, 167, 0.04);
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    background: var(--pill-bg);
+    color: var(--blue);
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     4. HERO SECTION — CLEAN MOBILE LAYOUT
+     ══════════════════════════════════════════════════════════════
+     Mobile hero uses a VERTICAL STACKED layout:
+     • Top half: Full-width text content over the ivory wave
+     • Bottom half: Portrait image on the blue background
+     • The wave sweeps horizontally between them
+     ============================================================ */
+  .hero-section {
+    height: 100svh !important;
+    height: 100vh !important;
+    min-height: 600px !important;
+    padding: 0 !important;
+    background: var(--hero-blue) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Layer 1: Ambient Blue Canvas */
+  .hero-bg-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .floating-orb.orb-1 {
+    width: 200px;
+    height: 200px;
+    top: auto;
+    bottom: 10%;
+    right: 10%;
+    opacity: 0.3;
+    filter: blur(40px);
+  }
+
+  .floating-orb.orb-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    right: 50%;
+    opacity: 0.25;
+    filter: blur(35px);
+  }
+
+  /* Layer 2: Portrait Image — bottom half, centered */
+  .hero-image {
+    display: flex !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: min(300px, 70vw) !important;
+    height: 48% !important;
+    max-height: 420px !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    filter: drop-shadow(0 12px 30px rgba(10, 24, 43, 0.35));
+  }
+
+  /* Layer 3: Ivory Wave — hide the desktop SVG, use a simple CSS curve instead */
+  .hero-wave {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 58% !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+    filter: none !important;
+    overflow: visible !important;
+  }
+
+  .hero-wave path {
+    /* Redraw as a top block covering the upper portion with a curved bottom edge */
+    d: path("M 0,0 L 1440,0 L 1440,680 C 1200,760 800,760 400,700 C 200,670 80,660 0,660 Z");
+    fill: var(--wave-color);
+  }
+
+  /* Layer 4: Hero Content — full width, positioned in the upper ivory area */
+  .hero-content-wrapper {
+    position: relative !important;
+    z-index: 4 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 72px 22px 0 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    pointer-events: none !important;
+    height: auto !important;
+  }
+
+  .hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    pointer-events: auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Eyebrow Pill */
+  .eyebrow-pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 14px;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+    width: fit-content;
+  }
+
+  .pill-dot {
+    width: 5.5px;
+    height: 5.5px;
+  }
+
+  /* Title */
+  .hero-title {
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(30px, 8.5vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 0;
+  }
+
+  .hero-greeting {
+    font-size: inherit;
+    display: block;
+    line-height: 1.15;
+    margin-bottom: 2px;
+  }
+
+  .hero-name {
+    display: block;
+  }
+
+  /* Description */
+  .hero-description {
+    font-size: clamp(13px, 3.5vw, 14.5px);
+    line-height: 1.6;
+    margin-top: 10px;
+    max-width: 100%;
+    color: var(--text-body);
+  }
+
+  /* Buttons */
+  .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .primary-button,
+  .outline-button {
+    height: 42px;
+    padding: 0 16px;
+    font-size: 13.5px;
+    border-radius: 10px;
+    min-width: 0;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .btn-arrow {
+    font-size: 15px;
+  }
+
+  .linkedin-mark {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Tech Badges — clean horizontal grid, no wrapping overflow */
+  .hero-tech-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-top: 14px;
+    width: 100%;
+  }
+
+  .tech-badge {
+    font-size: 10.5px;
+    padding: 5px 6px;
+    border-radius: 7px;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .tech-badge span:first-child {
+    font-size: 12px;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+
+  /* Floating Social FAB — mobile sizing & positioning */
+  .floating-socials {
+    bottom: 14px;
+    left: 14px;
+  }
+
+  .social-fab {
+    width: 46px;
+    height: 46px;
+  }
+
+  .social-link-item {
+    width: 38px;
+    height: 38px;
+  }
+
+  .social-link-item[data-tooltip]::after {
+    display: none; /* hide tooltips on touch screens */
+  }
+
+  /* ── 5. Side Navigation Dots ────────────────────────────────── */
+  .side-nav-dots {
+    display: flex !important;
+    position: fixed !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    z-index: 1300 !important;
+    padding: 6px 5px !important;
+    background: rgba(0, 0, 0, 0.22) !important;
+    border-radius: 14px !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+
+  .dot-label {
+    display: none !important;
+  }
+
+  .dot-circle {
+    width: 7px;
+    height: 7px;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+  }
+
+  .nav-dot.active .dot-circle {
+    width: 8px;
+    height: 8px;
+    background: var(--blue);
+    box-shadow: 0 0 10px var(--blue-glow);
+    transform: scale(1.35);
+  }
+
+  /* ── 6. About Section ───────────────────────────────────────── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  .glass-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .card-icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    margin-bottom: 10px;
+  }
+
+  .card-icon-wrap svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .glass-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .glass-card p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .card-pills {
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .pill {
+    font-size: 11px;
+    padding: 3px 9px;
+  }
+
+  .about-highlights-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 18px;
+    margin-top: 14px;
+    border-radius: 14px;
+  }
+
+  .hl-number {
+    font-size: clamp(18px, 4.5vw, 22px);
+  }
+
+  .hl-label {
+    font-size: 10.5px;
+    margin-top: 2px;
+  }
+
+  .highlight-divider {
+    width: 1px;
+    height: 28px;
+    background: var(--line);
+  }
+
+  /* ── 7. Experience Timeline ─────────────────────────────────── */
+  .experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .timeline-card {
+    padding: 14px 16px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .date-chip {
+    font-size: 10.5px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    width: fit-content;
+  }
+
+  .card-meta h3 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .org-name {
+    font-size: 12.5px;
+    margin: 2px 0 6px;
+  }
+
+  .timeline-content p {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .tag-row {
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    font-size: 10.5px;
+    padding: 3px 7px;
+  }
+
+  /* ── 8. Skills Matrix ───────────────────────────────────────── */
+  .skills-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .skill-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .skill-header {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .skill-icon {
+    font-size: 20px;
+  }
+
+  .skill-header h3 {
+    font-size: 14px;
+  }
+
+  .skill-card p {
+    font-size: 12px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+
+  .skill-chips {
+    gap: 4px;
+  }
+
+  .skill-chips span {
+    font-size: 10px;
+    padding: 3px 7px;
+  }
+
+  /* ── 9. Contact Section ─────────────────────────────────────── */
+  .contact-split-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 6px;
+  }
+
+  .contact-info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .info-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+    gap: 12px;
+  }
+
+  .info-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    border-radius: 9px;
+  }
+
+  .info-label {
+    font-size: 10px;
+  }
+
+  .info-val {
+    font-size: 13px;
+    word-break: break-all;
+  }
+
+  .social-links-strip {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .social-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+    border-radius: 10px;
+    gap: 7px;
+  }
+
+  .contact-form-panel {
+    padding: 16px 18px;
+    border-radius: 16px;
+  }
+
+  .contact-form {
+    gap: 10px;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-field {
+    gap: 4px;
+  }
+
+  .form-field label {
+    font-size: 11.5px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-size: 16px; /* prevents iOS auto-zoom */
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .contact-submit-btn {
+    height: 42px;
+    font-size: 13.5px;
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    font-size: 11.5px;
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+
+  .back-to-top-btn {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  /* ── 10. Scroll Reveal Animations ───────────────────────────── */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-on-scroll.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .hero-copy .reveal-item {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .hero-section.is-visible .hero-copy .reveal-item:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.05s; }
+  .hero-section.is-visible .hero-copy .reveal-item:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+  .hero-section.is-visible .hero-copy .reveal-item:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+  .hero-section.is-visible .hero-copy .reveal-item:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
+  .hero-section.is-visible .hero-copy .reveal-item:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
+}
+
+/* ── Extra Small Screens (≤ 380px) ────────────────────────────── */
+@media screen and (max-width: 380px) {
+  .hero-title {
+    font-size: 26px !important;
+  }
+
+  .hero-description {
+    font-size: 12.5px !important;
+  }
+
+  .hero-image {
+    width: 240px !important;
+    height: 42% !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+  }
+
+  .primary-button,
+  .outline-button {
+    width: 100% !important;
+  }
+
+  .brand-role-badge {
+    display: none !important;
+  }
+
+  .skills-matrix {
+    grid-template-columns: 1fr !important;
+  }
+}

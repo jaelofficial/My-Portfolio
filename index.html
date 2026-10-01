@@ -4,27 +4,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jael Dede Amoo — Cybersecurity & AI Engineer." />
-  <title>Jael Dede Amoo | Cybersecurity & AI Engineer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="./favicon.jpg" />
+  <link rel="apple-touch-icon" href="./favicon.jpg" />
+
+  <!-- Primary SEO Meta Tags for "Jael Dede Amoo" Ranking -->
+  <title>Jael Dede Amoo | Cybersecurity &amp; AI Engineer — Portfolio</title>
+  <meta name="title" content="Jael Dede Amoo | Cybersecurity &amp; AI Engineer — Portfolio" />
+  <meta name="description"
+    content="Official portfolio of Jael Dede Amoo, a Cybersecurity and AI Engineer based in Accra, Ghana. Explore Jael Amoo's projects in secure infrastructure, AI engineering, automation pipelines, and enterprise systems." />
+  <meta name="keywords"
+    content="Jael Dede Amoo, Jael Amoo, Jael Dede, Cybersecurity Engineer, AI Engineer, Security Analyst, GCTU Computer Science, AMS1ONE Solutions, iSERD, Onix Data Centre, Ghana Cybersecurity, Jael Portfolio, jaelofficial" />
+  <meta name="author" content="Jael Dede Amoo" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://jaelofficial.github.io/My-Portfolio/" />
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://jaelofficial.github.io/My-Portfolio/" />
+  <meta property="og:title" content="Jael Dede Amoo | Cybersecurity &amp; AI Engineer" />
+  <meta property="og:description"
+    content="Official portfolio of Jael Dede Amoo — Cybersecurity and AI Engineer specializing in resilient systems, AI model pipelines, and infrastructure protection." />
+  <meta property="og:image" content="https://jaelofficial.github.io/My-Portfolio/hero_person.png" />
+  <meta property="og:site_name" content="Jael Dede Amoo" />
+  <meta property="profile:first_name" content="Jael" />
+  <meta property="profile:last_name" content="Amoo" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://jaelofficial.github.io/My-Portfolio/" />
+  <meta name="twitter:title" content="Jael Dede Amoo | Cybersecurity &amp; AI Engineer" />
+  <meta name="twitter:description"
+    content="Official portfolio of Jael Dede Amoo — Cybersecurity and AI Engineer specializing in resilient systems, AI model pipelines, and infrastructure protection." />
+  <meta name="twitter:image" content="https://jaelofficial.github.io/My-Portfolio/hero_person.png" />
+
+  <!-- Structured Data JSON-LD for Search Engine Knowledge Panel -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://jaelofficial.github.io/My-Portfolio/#person",
+    "name": "Jael Dede Amoo",
+    "alternateName": ["Jael Amoo", "Jael Dede", "jaelofficial"],
+    "gender": "Female",
+    "nationality": "Ghanaian",
+    "jobTitle": "Cybersecurity & AI Engineer",
+    "worksFor": [
+      {
+        "@type": "Organization",
+        "name": "AMS1ONE Solutions"
+      },
+      {
+        "@type": "Organization",
+        "name": "iSERD"
+      }
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Ghana Communication Technology University"
+    },
+    "url": "https://jaelofficial.github.io/My-Portfolio/",
+    "image": "https://jaelofficial.github.io/My-Portfolio/hero_person.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/jael-amoo/",
+      "https://github.com/jaelofficial",
+      "https://www.instagram.com/_jaelofficial/",
+      "https://x.com/JaelAmoo",
+      "https://snapchat.com/t/70YbMHnZ"
+    ],
+    "knowsAbout": [
+      "Cybersecurity",
+      "Artificial Intelligence",
+      "Network Security",
+      "Automation Pipelines",
+      "Threat Mitigation",
+      "System Administration",
+      "Digital Infrastructure Protection",
+      "Python",
+      "C++",
+      "Linux"
+    ],
+    "email": "mailto:amoojael87@gmail.com",
+    "telephone": "+233248283682",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Accra",
+      "addressCountry": "Ghana"
+    },
+    "description": "Jael Dede Amoo is a Cybersecurity and AI Engineer focused on building secure systems, intelligent model pipelines, and practical automation solutions."
+  }
+  </script>
+
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mobile.css" />
 </head>
 
 <body>
-  <main class="portfolio-shell">
-    <div class="portfolio-card">
-      <!-- Layer 1: Blue background provided by .portfolio-card -->
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
 
-      <!-- Layer 2: Picture (Middle layer) -->
-      <div class="hero-image">
-        <img src="./hero_person.jpeg" alt="Jael Dede Amoo — Cybersecurity &amp; AI Engineer" />
+  <!-- Parallax Section Indicator Dots -->
+  <nav class="side-nav-dots" id="side-nav-dots" aria-label="Quick section navigation">
+    <a href="#home" class="nav-dot active" data-section="home" aria-label="Go to Home section">
+      <span class="dot-label">01 // Home</span>
+      <span class="dot-circle"></span>
+    </a>
+    <a href="#about" class="nav-dot" data-section="about" aria-label="Go to About section">
+      <span class="dot-label">02 // About</span>
+      <span class="dot-circle"></span>
+    </a>
+    <a href="#portfolio" class="nav-dot" data-section="portfolio" aria-label="Go to Experience section">
+      <span class="dot-label">03 // Experience</span>
+      <span class="dot-circle"></span>
+    </a>
+    <a href="#skills" class="nav-dot" data-section="skills" aria-label="Go to Skills section">
+      <span class="dot-label">04 // Skills</span>
+      <span class="dot-circle"></span>
+    </a>
+    <a href="#contact" class="nav-dot" data-section="contact" aria-label="Go to Contact section">
+      <span class="dot-label">05 // Contact</span>
+      <span class="dot-circle"></span>
+    </a>
+  </nav>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a class="brand-name" href="#home" aria-label="Jael Dede Amoo portfolio home">
+        <span class="brand-text">Jael Dede Amoo</span>
+        <span class="brand-role-badge">Cyber &amp; AI</span>
+      </a>
+
+      <!-- Desktop Nav & Mobile Drawer Menu -->
+      <nav class="nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#portfolio" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-controls">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode"
+          title="Switch to dark mode">
+          <span class="toggle-sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round">
+              <circle cx="12" cy="12" r="4.2"></circle>
+              <path
+                d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56">
+              </path>
+            </svg>
+          </span>
+          <span class="toggle-thumb" aria-hidden="true">
+            <svg class="thumb-moon" viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-line top"></span>
+          <span class="hamburger-line mid"></span>
+          <span class="hamburger-line bot"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- FULL-SCREEN PARALLAX SECTIONS (Render One by One) -->
+  <main id="main-content">
+
+    <!-- SECTION 1: HERO STAGE (3-Layer Full-Width Setup) -->
+    <section class="full-section hero-section" id="home">
+      <!-- Layer 1: Blue background canvas with floating ambient orbs -->
+      <div class="hero-bg-layer" aria-hidden="true">
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
       </div>
 
-      <!-- Layer 3: White/Ivory curved wave (Top layer - covers left side and sweeps over bottom of picture) -->
+      <!-- Layer 2: Picture (Middle layer, reacts to parallax scroll) -->
+      <div class="hero-image" id="hero-image-wrap">
+        <img src="./hero_person.png" alt="Jael Dede Amoo — Cybersecurity &amp; AI Engineer" id="hero-portrait" />
+      </div>
+
+      <!-- Layer 3: White/Ivory curved wave (Top layer covering left side and sweeping over bottom of picture) -->
       <svg class="hero-wave" viewBox="0 0 1440 760" preserveAspectRatio="none" aria-hidden="true">
         <path d="M 0,0 
                  L 815,0 
@@ -36,52 +209,33 @@
                  L 0,760 Z" />
       </svg>
 
-      <!-- Layer 4: Header Navigation (Interactive top layer) -->
-      <header class="site-header">
-        <a class="brand-name" href="#home">Jael Dede Amoo</a>
-        <nav class="nav" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#portfolio">Projects</a>
-          <a href="contact.html">Contact</a>
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode"
-            title="Switch to dark mode">
-            <span class="toggle-sun" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round">
-                <circle cx="12" cy="12" r="4.2"></circle>
-                <path
-                  d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56">
-                </path>
-              </svg>
-            </span>
-            <span class="toggle-thumb" aria-hidden="true">
-              <svg class="thumb-moon" viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            </span>
-          </button>
-        </nav>
-      </header>
+      <!-- Layer 4: Interactive Hero Content / Copy -->
+      <div class="hero-content-wrapper">
+        <div class="hero-copy" id="hero-copy">
+          <div class="eyebrow-pill reveal-item">
+            <span class="pill-dot"></span>
+            CYBERSECURITY &amp; AI ENGINEER
+          </div>
 
-      <!-- Layer 4: Hero Content / Copy (Interactive top layer) -->
-      <section class="hero" id="home">
-        <div class="hero-copy">
-          <div class="eyebrow">CYBERSECURITY &amp; AI ENGINEER</div>
-          <h1 class="hero-title">
+          <h1 class="hero-title reveal-item">
             <span class="hero-greeting">Hello, my name is</span>
             <span class="hero-name">Jael Dede Amoo</span>
           </h1>
-          <p class="hero-description">
+
+          <p class="hero-description reveal-item">
             I'm a cybersecurity and AI engineer, passionate about building secure systems, intelligent solutions and
             automation that make a real difference. I enjoy solving problems, learning new technologies, and creating
             technology that's both useful and secure.
           </p>
-          <div class="hero-buttons">
-            <a class="button primary-button" href="#portfolio">Projects <span class="btn-arrow"
-                aria-hidden="true">→</span></a>
+
+          <div class="hero-buttons reveal-item">
+            <a class="button primary-button" href="#portfolio">
+              <span>Projects</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
             <a class="button outline-button" href="https://www.linkedin.com/in/jael-amoo" target="_blank"
               rel="noreferrer">
-              LinkedIn
+              <span>LinkedIn</span>
               <span class="linkedin-mark" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
                   <path
@@ -90,63 +244,442 @@
               </span>
             </a>
           </div>
+
+          <div class="hero-tech-strip reveal-item">
+            <span class="tech-badge"><span>🛡️</span> Network Defense</span>
+            <span class="tech-badge"><span>🤖</span> AI Automation</span>
+            <span class="tech-badge"><span>⚡</span> Python &amp; Systems</span>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+
+      <!-- Scroll Cue Indicator -->
+      <a class="scroll-cue" href="#about" aria-label="Scroll to About section">
+        <span class="mouse-icon">
+          <span class="mouse-wheel"></span>
+        </span>
+        <span class="cue-text">Scroll to explore</span>
+      </a>
+    </section>
+
+    <!-- SECTION 2: ABOUT STAGE (Single Full-Screen Section) -->
+    <section class="full-section stage-section" id="about">
+      <div class="section-bg-deco" aria-hidden="true">
+        <div class="deco-number">01</div>
+      </div>
+
+      <div class="stage-container reveal-on-scroll">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            01 // ABOUT JAEL DEDE AMOO
+          </div>
+          <h2 class="section-title">Cybersecurity, AI and practical engineering.</h2>
+          <p class="section-subtitle">
+            Bridging robust digital protection with modern intelligent automation.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass-card tilt-card">
+            <div class="card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3>Education &amp; Core Foundation</h3>
+            <p>
+              I’m currently completing a BSc. in Computer Science (Cyber Security) at <strong>Ghana Communication
+                Technology University</strong>. My core domain spans network defense, system administration, digital
+              infrastructure protection, artificial intelligence and automated workflows.
+            </p>
+            <div class="card-pills">
+              <span class="pill">GCTU CS (Cyber Security)</span>
+              <span class="pill">Network Security</span>
+              <span class="pill">Accra, Ghana</span>
+            </div>
+          </div>
+
+          <div class="glass-card tilt-card">
+            <div class="card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </div>
+            <h3>Engineering Mindset &amp; AI</h3>
+            <p>
+              I enjoy understanding how complex systems operate under the hood, pinpointing vulnerability points before
+              they can fail, and building practical automation models that empower technology to be both highly useful
+              and intrinsically secure.
+            </p>
+            <div class="card-pills">
+              <span class="pill">Proactive Defense</span>
+              <span class="pill">Intelligent Workflows</span>
+              <span class="pill">Secure Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-highlights-bar">
+          <div class="highlight-item">
+            <span class="hl-number">Tier-IV</span>
+            <span class="hl-label">Data Centre Exposure</span>
+          </div>
+          <div class="highlight-divider"></div>
+          <div class="highlight-item">
+            <span class="hl-number">AI &amp; ERP</span>
+            <span class="hl-label">Enterprise Internships</span>
+          </div>
+          <div class="highlight-divider"></div>
+          <div class="highlight-item">
+            <span class="hl-number">BSc.</span>
+            <span class="hl-label">Computer Science (Cyber)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PROJECTS & EXPERIENCE STAGE -->
+    <section class="full-section stage-section" id="portfolio">
+      <div class="section-bg-deco" aria-hidden="true">
+        <div class="deco-number">02</div>
+      </div>
+
+      <div class="stage-container reveal-on-scroll">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            02 // PRACTICAL EXPERIENCE &amp; IMMERSION
+          </div>
+          <h2 class="section-title">Practical work, engineering and site immersion.</h2>
+          <p class="section-subtitle">
+            Hands-on technical internships across artificial intelligence, enterprise ERP systems, and Tier-IV data
+            centers.
+          </p>
+        </div>
+
+        <div class="experience-timeline">
+          <!-- Timeline Item 1 -->
+          <article class="timeline-card tilt-card">
+            <div class="timeline-date-col">
+              <span class="date-chip">Sep 2026 — Oct 2026</span>
+              <span class="timeline-node"></span>
+            </div>
+            <div class="timeline-content">
+              <div class="card-meta">
+                <h3>AI Engineer Intern</h3>
+                <span class="org-name">AMS1ONE Solutions</span>
+              </div>
+              <p>
+                Engaged in end-to-end AI engineering workflows, developed intelligent system models, configured
+                automation pipelines, and solved data-driven technical problems.
+              </p>
+              <div class="tag-row">
+                <span class="tag">AI Engineering</span>
+                <span class="tag">Python</span>
+                <span class="tag">Model Integration</span>
+                <span class="tag">Automation Pipelines</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Timeline Item 2 -->
+          <article class="timeline-card tilt-card">
+            <div class="timeline-date-col">
+              <span class="date-chip">Sep 2025 — Nov 2025</span>
+              <span class="timeline-node"></span>
+            </div>
+            <div class="timeline-content">
+              <div class="card-meta">
+                <h3>Information Technology Intern</h3>
+                <span class="org-name">iSERD</span>
+              </div>
+              <p>
+                Supported enterprise ERP deployment and customization while gaining deep hands-on exposure to corporate
+                IT infrastructure, system integration, and information architecture protection.
+              </p>
+              <div class="tag-row">
+                <span class="tag">ERP Customization</span>
+                <span class="tag">IT Infrastructure</span>
+                <span class="tag">System Integration</span>
+                <span class="tag">Database Workflows</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Timeline Item 3 -->
+          <article class="timeline-card tilt-card">
+            <div class="timeline-date-col">
+              <span class="date-chip">Industrial Immersion</span>
+              <span class="timeline-node"></span>
+            </div>
+            <div class="timeline-content">
+              <div class="card-meta">
+                <h3>Technical Industrial Immersion</h3>
+                <span class="org-name">Onix Data Centre — Tier-IV Facility</span>
+              </div>
+              <p>
+                Conducted comprehensive technical observation of fault-tolerant data centre infrastructure, physical
+                perimeter biometric access controls, N+1 power redundancy, and continuous server hall telemetry.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Tier-IV Facility</span>
+                <span class="tag">Perimeter Security</span>
+                <span class="tag">Power Redundancy</span>
+                <span class="tag">Server Telemetry</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SKILLS & TOOLKIT STAGE -->
+    <section class="full-section stage-section" id="skills">
+      <div class="section-bg-deco" aria-hidden="true">
+        <div class="deco-number">03</div>
+      </div>
+
+      <div class="stage-container reveal-on-scroll">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            03 // TECHNICAL TOOLKIT
+          </div>
+          <h2 class="section-title">What I work with.</h2>
+          <p class="section-subtitle">
+            Curated technical capabilities in cybersecurity analysis, intelligent automation, and system administration.
+          </p>
+        </div>
+
+        <div class="skills-matrix">
+          <div class="skill-card tilt-card">
+            <div class="skill-header">
+              <span class="skill-icon">🛡️</span>
+              <h3>Cybersecurity</h3>
+            </div>
+            <p>
+              Network security, vulnerability awareness, system auditing, threat evaluation, and secure configuration.
+            </p>
+            <div class="skill-chips">
+              <span>Network Defense</span>
+              <span>Vulnerability Scanning</span>
+              <span>Hardening</span>
+              <span>Auditing</span>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card">
+            <div class="skill-header">
+              <span class="skill-icon">🤖</span>
+              <h3>AI &amp; Automation</h3>
+            </div>
+            <p>
+              AI engineering workflows, model integration, Python scripting, intelligent pipelines, and data automation.
+            </p>
+            <div class="skill-chips">
+              <span>Python Scripting</span>
+              <span>Model Integration</span>
+              <span>Automated Tasks</span>
+              <span>Pipelines</span>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card">
+            <div class="skill-header">
+              <span class="skill-icon">🌐</span>
+              <h3>Networking</h3>
+            </div>
+            <p>
+              TCP/IP stack, SSH protocol, VLAN configuration, subnetting, network setup, and connectivity
+              troubleshooting.
+            </p>
+            <div class="skill-chips">
+              <span>TCP/IP</span>
+              <span>SSH</span>
+              <span>VLANs</span>
+              <span>Troubleshooting</span>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card">
+            <div class="skill-header">
+              <span class="skill-icon">💻</span>
+              <h3>Programming &amp; OS</h3>
+            </div>
+            <p>
+              Software programming and operational environments across Python, C++, Linux distributions, and Windows.
+            </p>
+            <div class="skill-chips">
+              <span>Python</span>
+              <span>C++</span>
+              <span>Linux</span>
+              <span>Windows Server</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: CONTACT & CONNECT STAGE -->
+    <section class="full-section stage-section" id="contact">
+      <div class="section-bg-deco" aria-hidden="true">
+        <div class="deco-number">04</div>
+      </div>
+
+      <div class="stage-container reveal-on-scroll">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            04 // LET'S WORK TOGETHER
+          </div>
+          <h2 class="section-title">Get in touch.</h2>
+          <p class="section-subtitle">
+            Have an engineering role, security consultation, or AI automation project? Reach out directly.
+          </p>
+        </div>
+
+        <div class="contact-split-layout">
+          <!-- Left: Contact Details & Direct Links -->
+          <div class="contact-info-panel">
+            <div class="info-card">
+              <div class="info-icon">📧</div>
+              <div>
+                <span class="info-label">Direct Email</span>
+                <a class="info-val" href="mailto:amoojael87@gmail.com">amoojael87@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">📱</div>
+              <div>
+                <span class="info-label">Phone &amp; WhatsApp</span>
+                <a class="info-val" href="tel:+233248283682">+233 24 828 3682</a>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">📍</div>
+              <div>
+                <span class="info-label">Location</span>
+                <span class="info-val">Accra, Ghana (Available Globally)</span>
+              </div>
+            </div>
+
+            <!-- Social Links Strip -->
+            <div class="social-links-strip">
+              <a href="https://www.linkedin.com/in/jael-amoo" target="_blank" rel="noreferrer" class="social-btn"
+                aria-label="LinkedIn profile of Jael Dede Amoo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.55a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <a href="https://github.com/jaelofficial" target="_blank" rel="noreferrer" class="social-btn"
+                aria-label="GitHub profile of Jael Dede Amoo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="contact-form-panel">
+            <form class="contact-form" action="https://formspree.io/f/mwlpyzjj" method="POST">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="contact-name">Your Name</label>
+                  <input id="contact-name" type="text" name="name" autocomplete="name" placeholder="e.g. John Doe"
+                    required />
+                </div>
+                <div class="form-field">
+                  <label for="contact-email">Email Address</label>
+                  <input id="contact-email" type="email" name="email" autocomplete="email"
+                    placeholder="john@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-subject">Subject</label>
+                <input id="contact-subject" type="text" name="subject" placeholder="Security Collaboration / AI Project"
+                  required />
+              </div>
+
+              <div class="form-field">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="5"
+                  placeholder="Tell me about your project, timeline, and goals..." required></textarea>
+              </div>
+
+              <button class="button primary-button contact-submit-btn" type="submit">
+                <span>Send Message</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+          <div class="footer-left">
+            <span>© <span id="year"></span> <strong>Jael Dede Amoo</strong></span>
+            <span class="footer-sep">•</span>
+            <span>Cybersecurity &amp; AI Engineer</span>
+          </div>
+          <div class="footer-right">
+            <a href="#home" class="back-to-top-btn" aria-label="Back to top">
+              <span>Back to Top</span>
+              <span aria-hidden="true">↑</span>
+            </a>
+          </div>
+        </footer>
+      </div>
+    </section>
+
   </main>
 
-  <section class="below-content" id="about">
-    <div class="content-section">
-      <div class="section-label">ABOUT</div>
-      <h2>Cybersecurity, AI and practical engineering.</h2>
-      <div class="two-column">
-        <p>I’m currently completing a BSc. in Computer Science (Cyber Security) at Ghana Communication Technology
-          University. My interests span network security, system administration, digital infrastructure protection,
-          artificial intelligence and automation.</p>
-        <p>I enjoy understanding how systems work, identifying where they can fail, and building practical solutions
-          that make technology more useful and secure.</p>
-      </div>
-    </div>
+  <!-- Floating Social Sidebar -->
+  <aside class="floating-socials" id="floating-socials" aria-label="Social media links">
+    <button class="social-fab" id="social-fab" type="button" aria-label="Toggle social links" aria-expanded="false">
+      <svg class="fab-icon-share" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+      </svg>
+      <svg class="fab-icon-close" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
 
-    <div class="content-section" id="portfolio">
-      <div class="section-label">PROJECTS &amp; EXPERIENCE</div>
-      <h2>Practical work and experience.</h2>
-      <div class="experience-list">
-        <article>
-          <span>Sep 2026 — Oct 2026</span>
-          <div>
-            <h3>AI Engineer Intern</h3>
-            <strong>AMS1ONE Solutions</strong>
-            <p>Worked with AI engineering workflows, intelligent system models, automation pipelines and data-driven
-              problem solving.</p>
-          </div>
-        </article>
-        <article>
-          <span>Sep 2025 — Nov 2025</span>
-          <div>
-            <h3>Information Technology Intern</h3>
-            <strong>iSERD</strong>
-            <p>Supported ERP deployment and customization while gaining practical exposure to IT infrastructure, system
-              integration and enterprise information systems.</p>
-          </div>
-        </article>
-        <article>
-          <span>Educational Site Study</span>
-          <div>
-            <h3>Technical Industrial Immersion</h3>
-            <strong>Onix Data Centre — Tier-IV Facility</strong>
-            <p>Observed fault-tolerant infrastructure, physical and perimeter access controls, power redundancy and
-              server hall monitoring.</p>
-          </div>
-        </article>
-      </div>
+    <div class="social-links-fan">
+      <a href="https://www.linkedin.com/in/jael-amoo/" target="_blank" rel="noreferrer" class="social-link-item" aria-label="LinkedIn" data-tooltip="LinkedIn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.55a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/_jaelofficial/" target="_blank" rel="noreferrer" class="social-link-item" aria-label="Instagram" data-tooltip="Instagram">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://snapchat.com/t/70YbMHnZ" target="_blank" rel="noreferrer" class="social-link-item" aria-label="Snapchat" data-tooltip="Snapchat">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12.959-.289.199-.122.404-.066.538.026.17.12.285.313.285.508 0 .333-.229.567-.51.717a3.7 3.7 0 01-.958.365c-.115.03-.233.063-.35.098-.252.078-.475.2-.543.52-.044.173-.002.394.154.598.207.279.514.603.855.903a6.2 6.2 0 001.462.894c.35.165.657.36.788.655.088.198.063.463-.065.685-.256.453-.72.746-1.29.848-.263.05-.564.07-.89.072-.315 0-.593-.014-.85-.044l-.079-.01c-.137-.017-.278-.033-.42-.033-.3 0-.503.061-.67.128a8 8 0 01-.346.142c-.607.242-1.29.514-2.46.514-1.17 0-1.855-.272-2.462-.514a8 8 0 01-.346-.142c-.167-.067-.37-.128-.67-.128-.142 0-.283.016-.42.033-.028.003-.055.007-.079.01-.257.03-.535.044-.849.044-.326-.001-.627-.021-.89-.072-.571-.102-1.035-.395-1.29-.848-.129-.222-.154-.487-.066-.685.13-.295.438-.49.788-.655a6.2 6.2 0 001.462-.894c.341-.3.648-.624.855-.903.156-.204.198-.425.154-.598-.068-.32-.29-.442-.543-.52a5 5 0 00-.35-.098 3.7 3.7 0 01-.958-.365c-.281-.15-.51-.384-.51-.717 0-.195.115-.388.285-.508.134-.092.339-.148.538-.026.3.17.66.305.96.289.197 0 .325-.045.4-.09a13 13 0 01-.032-.569c-.104-1.627-.23-3.654.3-4.846C6.447 1.069 9.797.793 10.787.793h1.42z"/></svg>
+      </a>
+      <a href="https://x.com/JaelAmoo" target="_blank" rel="noreferrer" class="social-link-item" aria-label="X / Twitter" data-tooltip="X / Twitter">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://github.com/jaelofficial" target="_blank" rel="noreferrer" class="social-link-item" aria-label="GitHub" data-tooltip="GitHub">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+      </a>
+      <a href="https://discord.com/users/1407378821908529342" target="_blank" rel="noreferrer" class="social-link-item" aria-label="Discord" data-tooltip="Discord">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.3 18.3 0 0 0-5.487 0 13 13 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.7 19.7 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13 13 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10 10 0 0 0 .372-.292.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.8 19.8 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+      </a>
     </div>
-  </section>
-
-  <footer>
-    <span>© <span id="year"></span> Jael Dede Amoo</span>
-    <span>Cybersecurity &amp; AI Engineer</span>
-  </footer>
+  </aside>
 
   <script src="script.js"></script>
 </body>
