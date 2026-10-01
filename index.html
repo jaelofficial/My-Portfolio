@@ -546,7 +546,12 @@
           <!-- Left: Contact Details & Direct Links -->
           <div class="contact-info-panel">
             <div class="info-card">
-              <div class="info-icon">📧</div>
+              <div class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <path d="m3 7 9 6 9-6"></path>
+                </svg>
+              </div>
               <div>
                 <span class="info-label">Direct Email</span>
                 <a class="info-val" href="mailto:amoojael87@gmail.com">amoojael87@gmail.com</a>
@@ -556,7 +561,12 @@
 
 
             <div class="info-card">
-              <div class="info-icon">📍</div>
+              <div class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="2.5"></circle>
+                </svg>
+              </div>
               <div>
                 <span class="info-label">Location</span>
                 <span class="info-val">Accra, Ghana (Available Globally)</span>
@@ -639,6 +649,15 @@
     </section>
 
   </main>
+
+
+  <!-- Quick Scroll Up -->
+  <button class="scroll-top-btn" id="scroll-top-btn" type="button" aria-label="Scroll back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m5 12 7-7 7 7"></path>
+      <path d="M12 19V5"></path>
+    </svg>
+  </button>
 
   <!-- Floating Social Sidebar -->
   <aside class="floating-socials" id="floating-socials" aria-label="Social media links">
