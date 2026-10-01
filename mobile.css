@@ -218,9 +218,9 @@
      • The wave sweeps horizontally between them
      ============================================================ */
   .hero-section {
-    height: 100svh !important;
-    height: 100vh !important;
-    min-height: 600px !important;
+    height: 120svh !important;
+    min-height: 760px !important;
+    max-height: 900px !important;
     padding: 0 !important;
     background: var(--hero-blue) !important;
     position: relative !important;
