@@ -132,6 +132,24 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", handleParallaxScroll, { passive: true });
   handleParallaxScroll(); // Initial run
 
+
+  // 4b. Quick Scroll Up Button
+  const scrollTopBtn = document.getElementById("scroll-top-btn");
+
+  function updateScrollTopButton() {
+    if (!scrollTopBtn) return;
+    scrollTopBtn.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.55);
+  }
+
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  window.addEventListener("scroll", updateScrollTopButton, { passive: true });
+  updateScrollTopButton();
+
   // 5. Robust Section-by-Section Reveal Engine (Mobile + Desktop)
   const fullSections = document.querySelectorAll(".full-section");
   const navDots = document.querySelectorAll(".nav-dot");
