@@ -645,7 +645,244 @@
     padding: 3px 7px;
   }
 
-  /* ── 9. Contact Section ─────────────────────────────────────── */
+  /* ── 9. Certificates Carousel Section (Mobile) ───────────── */
+  .cert-carousel-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .cert-filter-bar {
+    gap: 6px;
+    margin-bottom: 0;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .cert-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cert-filter-btn {
+    padding: 6px 12px;
+    font-size: 11.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .cert-carousel-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .carousel-counter {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .carousel-counter strong {
+    font-size: 13px;
+  }
+
+  .carousel-btn-group {
+    gap: 6px;
+  }
+
+  .carousel-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carousel-nav-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .carousel-play-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .cert-carousel-viewport {
+    border-radius: 18px;
+  }
+
+  .cert-slide {
+    padding: 2px;
+  }
+
+  .cert-slide-card {
+    padding: 16px 14px;
+    border-radius: 18px;
+  }
+
+  .cert-featured-badge-ribbon {
+    position: static;
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  .cert-featured-badge-ribbon span {
+    font-size: 10px;
+    padding: 3px 9px;
+  }
+
+  .cert-slide-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cert-slide-media {
+    border-radius: 14px;
+  }
+
+  .cert-preview-img-frame {
+    aspect-ratio: 16 / 11;
+    border-radius: 14px;
+  }
+
+  .cert-slide-title {
+    font-size: clamp(17px, 4.5vw, 20px);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .cert-slide-desc {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .cert-featured-meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 10px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+  }
+
+  .meta-label {
+    font-size: 9.5px;
+  }
+
+  .meta-val {
+    font-size: 11.5px;
+  }
+
+  .meta-val.id-code {
+    font-size: 9.5px;
+  }
+
+  .cert-card-actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .cert-open-btn,
+  .cert-direct-btn {
+    width: 100%;
+    justify-content: center;
+    height: 38px;
+    font-size: 12.5px;
+  }
+
+  .cert-carousel-pagination {
+    margin-top: 14px;
+    gap: 6px;
+  }
+
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .carousel-dot.is-active {
+    width: 22px;
+  }
+
+  /* Lightbox Modal on Mobile */
+  .cert-lightbox {
+    padding: 10px;
+  }
+
+  .lightbox-container {
+    width: 100%;
+    max-height: 94vh;
+  }
+
+  .lightbox-card {
+    border-radius: 16px;
+  }
+
+  .lightbox-media-wrap {
+    max-height: 44vh;
+    min-height: 180px;
+  }
+
+  .lightbox-meta-bar {
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .lightbox-title {
+    font-size: 14.5px;
+  }
+
+  .lightbox-desc {
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+
+  .lightbox-details-list {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .lightbox-meta-right {
+    width: 100%;
+  }
+
+  .lightbox-full-btn {
+    width: 100%;
+    justify-content: center;
+    height: 36px;
+    font-size: 12.5px;
+  }
+
+  .lightbox-close-btn {
+    top: 6px;
+    right: 6px;
+    width: 32px;
+    height: 32px;
+    background: rgba(14, 25, 42, 0.9);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .lightbox-nav-btn {
+    width: 34px;
+    height: 34px;
+    background: rgba(14, 25, 42, 0.9);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .lightbox-prev-btn {
+    left: 6px;
+  }
+
+  .lightbox-next-btn {
+    right: 6px;
+  }
+
+  /* ── 10. Contact Section ────────────────────────────────────── */
   .contact-split-layout {
     display: flex;
     flex-direction: column;

@@ -301,4 +301,375 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // 9. Interactive Certificates Carousel Engine
+  function initCertCarousel() {
+    const viewport = document.getElementById("cert-carousel-viewport");
+    const track = document.getElementById("cert-carousel-track");
+    const allSlides = Array.from(document.querySelectorAll(".cert-slide"));
+    const prevBtn = document.getElementById("cert-carousel-prev");
+    const nextBtn = document.getElementById("cert-carousel-next");
+    const playBtn = document.getElementById("cert-carousel-play");
+    const currentCounter = document.getElementById("carousel-current");
+    const totalCounter = document.getElementById("carousel-total");
+    const dotsContainer = document.getElementById("cert-carousel-dots");
+    const filterBtns = document.querySelectorAll(".cert-filter-btn");
+
+    if (!viewport || !track || allSlides.length === 0) return;
+
+    let activeFilter = "all";
+    let visibleSlides = [...allSlides];
+    let currentIndex = 0;
+    let isPlaying = true;
+    let autoplayTimer = null;
+    const AUTOPLAY_DELAY = 5000;
+
+    function padZero(num) {
+      return String(num).padStart(2, "0");
+    }
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = "";
+      visibleSlides.forEach((slide, idx) => {
+        const dot = document.createElement("button");
+        dot.className = `carousel-dot${idx === currentIndex ? " is-active" : ""}`;
+        dot.type = "button";
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-label", `Go to certificate slide ${idx + 1}`);
+        dot.addEventListener("click", () => {
+          goToSlide(idx);
+          restartAutoplay();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateSlidePosition(smooth = true) {
+      if (visibleSlides.length === 0) return;
+      if (!smooth) {
+        track.style.transition = "none";
+      } else {
+        track.style.transition = "transform 0.55s cubic-bezier(0.2, 0.9, 0.3, 1)";
+      }
+
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Update active class on slides
+      allSlides.forEach((s) => s.classList.remove("is-active"));
+      if (visibleSlides[currentIndex]) {
+        visibleSlides[currentIndex].classList.add("is-active");
+      }
+
+      // Update counter
+      if (currentCounter) currentCounter.textContent = padZero(currentIndex + 1);
+      if (totalCounter) totalCounter.textContent = padZero(visibleSlides.length);
+
+      // Update dots
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll(".carousel-dot");
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle("is-active", idx === currentIndex);
+          dot.setAttribute("aria-selected", idx === currentIndex ? "true" : "false");
+        });
+      }
+    }
+
+    function goToSlide(newIndex, smooth = true) {
+      if (visibleSlides.length === 0) return;
+      if (newIndex < 0) {
+        currentIndex = visibleSlides.length - 1;
+      } else if (newIndex >= visibleSlides.length) {
+        currentIndex = 0;
+      } else {
+        currentIndex = newIndex;
+      }
+      updateSlidePosition(smooth);
+    }
+
+    function applyFilter(category) {
+      activeFilter = category;
+      visibleSlides = [];
+
+      allSlides.forEach((slide) => {
+        const slideCat = slide.getAttribute("data-category");
+        if (category === "all" || slideCat === category) {
+          slide.classList.remove("is-filtered-out");
+          visibleSlides.push(slide);
+        } else {
+          slide.classList.add("is-filtered-out");
+        }
+      });
+
+      filterBtns.forEach((btn) => {
+        const isSelected = btn.getAttribute("data-filter") === category;
+        btn.classList.toggle("is-active", isSelected);
+      });
+
+      currentIndex = 0;
+      buildDots();
+      updateSlidePosition(false);
+      restartAutoplay();
+    }
+
+    // Filter Button Clicks
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const cat = btn.getAttribute("data-filter");
+        if (cat) applyFilter(cat);
+      });
+    });
+
+    // Arrow Nav Clicks
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        goToSlide(currentIndex - 1);
+        restartAutoplay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        goToSlide(currentIndex + 1);
+        restartAutoplay();
+      });
+    }
+
+    // Autoplay Controls
+    function startAutoplay() {
+      clearInterval(autoplayTimer);
+      if (!isPlaying || visibleSlides.length <= 1) return;
+      autoplayTimer = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, AUTOPLAY_DELAY);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayTimer);
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    if (playBtn) {
+      playBtn.addEventListener("click", () => {
+        isPlaying = !isPlaying;
+        playBtn.classList.toggle("is-playing", isPlaying);
+        playBtn.setAttribute("aria-label", isPlaying ? "Pause autoplay" : "Start autoplay");
+        playBtn.setAttribute("title", isPlaying ? "Pause autoplay" : "Start autoplay");
+        if (isPlaying) {
+          startAutoplay();
+        } else {
+          stopAutoplay();
+        }
+      });
+    }
+
+    // Pause on Hover
+    viewport.addEventListener("mouseenter", () => {
+      if (isPlaying) stopAutoplay();
+    });
+
+    viewport.addEventListener("mouseleave", () => {
+      if (isPlaying) startAutoplay();
+    });
+
+    // Touch Swipe Gestures
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+    let isSwiping = false;
+
+    viewport.addEventListener("touchstart", (e) => {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchEndX = touchStartX;
+        touchEndY = touchStartY;
+        isSwiping = true;
+        stopAutoplay();
+      }
+    }, { passive: true });
+
+    viewport.addEventListener("touchmove", (e) => {
+      if (isSwiping && e.touches.length === 1) {
+        touchEndX = e.touches[0].clientX;
+        touchEndY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    viewport.addEventListener("touchend", () => {
+      if (!isSwiping) return;
+      isSwiping = false;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      // Ensure horizontal swipe is dominant and above threshold
+      if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          goToSlide(currentIndex + 1);
+        } else {
+          goToSlide(currentIndex - 1);
+        }
+      }
+      if (isPlaying) startAutoplay();
+    }, { passive: true });
+
+    // Keyboard Arrow Navigation
+    viewport.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goToSlide(currentIndex - 1);
+        restartAutoplay();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goToSlide(currentIndex + 1);
+        restartAutoplay();
+      }
+    });
+
+    // Initial setup
+    buildDots();
+    updateSlidePosition(false);
+    startAutoplay();
+
+    // Export helpers for Lightbox sync
+    window._certCarousel = {
+      getCurrentSlide: () => visibleSlides[currentIndex],
+      getVisibleSlides: () => visibleSlides,
+      goToIndex: (idx) => goToSlide(idx),
+      getCurrentIndex: () => currentIndex,
+    };
+  }
+
+  // 10. Certificate Lightbox Modal Engine
+  function initCertLightbox() {
+    const lightbox = document.getElementById("cert-lightbox");
+    if (!lightbox) return;
+
+    const overlay = document.getElementById("lightbox-overlay");
+    const closeBtn = document.getElementById("lightbox-close-btn");
+    const prevBtn = document.getElementById("lightbox-prev-btn");
+    const nextBtn = document.getElementById("lightbox-next-btn");
+    const img = document.getElementById("lightbox-img");
+    const spinner = document.getElementById("lightbox-spinner");
+    const title = document.getElementById("lightbox-title");
+    const desc = document.getElementById("lightbox-desc");
+    const badge = document.getElementById("lightbox-badge");
+    const subBadge = document.getElementById("lightbox-sub-badge");
+    const issuer = document.getElementById("lightbox-issuer");
+    const date = document.getElementById("lightbox-date");
+    const idCode = document.getElementById("lightbox-id");
+    const fullLink = document.getElementById("lightbox-full-link");
+
+    let currentLightboxIdx = 0;
+
+    function openModalWithSlide(slide) {
+      if (!slide) return;
+
+      const visibleList = window._certCarousel ? window._certCarousel.getVisibleSlides() : Array.from(document.querySelectorAll(".cert-slide:not(.is-filtered-out)"));
+      currentLightboxIdx = visibleList.indexOf(slide);
+      if (currentLightboxIdx < 0) currentLightboxIdx = 0;
+
+      populateModal(slide);
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function populateModal(slide) {
+      if (!slide) return;
+
+      const fullSrc = slide.getAttribute("data-full") || "";
+      const slideTitle = slide.getAttribute("data-title") || "Certificate";
+      const slideIssuer = slide.getAttribute("data-issuer") || "(ISC)²";
+      const slideBadge = slide.getAttribute("data-badge") || "Certified";
+      const slideSubBadge = slide.getAttribute("data-subbadge") || "Accredited";
+      const slideDate = slide.getAttribute("data-date") || "2026";
+      const slideId = slide.getAttribute("data-id") || "";
+      const slideDesc = slide.getAttribute("data-desc") || "";
+
+      if (title) title.textContent = slideTitle;
+      if (desc) desc.textContent = slideDesc;
+      if (badge) badge.textContent = slideBadge;
+      if (subBadge) subBadge.textContent = slideSubBadge;
+      if (issuer) issuer.textContent = slideIssuer;
+      if (date) date.textContent = slideDate;
+      if (idCode) idCode.textContent = slideId;
+      if (fullLink) fullLink.href = fullSrc;
+
+      if (img) {
+        if (spinner) spinner.classList.add("is-loading");
+        img.style.opacity = "0";
+
+        const temp = new Image();
+        temp.onload = () => {
+          img.src = fullSrc;
+          img.alt = slideTitle;
+          img.style.opacity = "1";
+          if (spinner) spinner.classList.remove("is-loading");
+        };
+        temp.onerror = () => {
+          img.src = fullSrc;
+          img.alt = slideTitle;
+          img.style.opacity = "1";
+          if (spinner) spinner.classList.remove("is-loading");
+        };
+        temp.src = fullSrc;
+      }
+    }
+
+    function closeModal() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (img) img.src = "";
+    }
+
+    function lightboxNavigate(step) {
+      const visibleList = window._certCarousel ? window._certCarousel.getVisibleSlides() : Array.from(document.querySelectorAll(".cert-slide:not(.is-filtered-out)"));
+      if (visibleList.length === 0) return;
+      currentLightboxIdx = (currentLightboxIdx + step + visibleList.length) % visibleList.length;
+      const targetSlide = visibleList[currentLightboxIdx];
+      populateModal(targetSlide);
+      if (window._certCarousel && window._certCarousel.goToIndex) {
+        window._certCarousel.goToIndex(currentLightboxIdx);
+      }
+    }
+
+    // Attach open handlers to all triggers
+    document.querySelectorAll(".cert-open-trigger, .cert-open-btn").forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        const slide = trigger.closest(".cert-slide");
+        if (slide) openModalWithSlide(slide);
+      });
+      trigger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          const slide = trigger.closest(".cert-slide");
+          if (slide) openModalWithSlide(slide);
+        }
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (overlay) overlay.addEventListener("click", closeModal);
+    if (prevBtn) prevBtn.addEventListener("click", () => lightboxNavigate(-1));
+    if (nextBtn) nextBtn.addEventListener("click", () => lightboxNavigate(1));
+
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("is-open")) return;
+      if (e.key === "Escape") closeModal();
+      else if (e.key === "ArrowLeft") lightboxNavigate(-1);
+      else if (e.key === "ArrowRight") lightboxNavigate(1);
+    });
+  }
+
+  // Initialize Certificate Systems
+  initCertCarousel();
+  initCertLightbox();
 });

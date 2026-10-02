@@ -64,6 +64,35 @@
       "@type": "CollegeOrUniversity",
       "name": "Ghana Communication Technology University"
     },
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certified in Cybersecurity (CC)",
+        "credentialCategory": "Professional Certification",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "(ISC)²"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Figma UI UX Design Essentials",
+        "credentialCategory": "Certificate of Completion",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Udemy"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Figma UI UX Design Advanced",
+        "credentialCategory": "Certificate of Completion",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Udemy"
+        }
+      }
+    ],
     "url": "https://jaelofficial.github.io/My-Portfolio/",
     "image": "https://jaelofficial.github.io/My-Portfolio/hero_person.png",
     "sameAs": [
@@ -127,8 +156,12 @@
       <span class="dot-label">04 // Skills</span>
       <span class="dot-circle"></span>
     </a>
+    <a href="#certificates" class="nav-dot" data-section="certificates" aria-label="Go to Certificates section">
+      <span class="dot-label">05 // Certs</span>
+      <span class="dot-circle"></span>
+    </a>
     <a href="#contact" class="nav-dot" data-section="contact" aria-label="Go to Contact section">
-      <span class="dot-label">05 // Contact</span>
+      <span class="dot-label">06 // Contact</span>
       <span class="dot-circle"></span>
     </a>
   </nav>
@@ -147,6 +180,7 @@
         <a href="#about" class="nav-link">About</a>
         <a href="#portfolio" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
@@ -524,8 +558,8 @@
       </div>
     </section>
 
-    <!-- SECTION 5: CONTACT & CONNECT STAGE -->
-    <section class="full-section stage-section" id="contact">
+    <!-- SECTION 5: CERTIFICATES & CREDENTIALS STAGE -->
+    <section class="full-section stage-section" id="certificates">
       <div class="section-bg-deco" aria-hidden="true">
         <div class="deco-number">04</div>
       </div>
@@ -534,7 +568,755 @@
         <div class="section-header">
           <div class="section-badge">
             <span class="badge-dot"></span>
-            04 // LET'S WORK TOGETHER
+            04 // VERIFIED CREDENTIALS &amp; CERTIFICATIONS
+          </div>
+          <h2 class="section-title">Verified certifications &amp; accreditations.</h2>
+          <p class="section-subtitle">
+            Officially issued industry certifications across cybersecurity defense, threat mitigation, system operations, and UI/UX design.
+          </p>
+        </div>
+
+        <!-- Carousel Controls Bar (Filters on Left, Arrows & Counter on Right) -->
+        <div class="cert-carousel-header">
+          <!-- Filter Controls -->
+          <div class="cert-filter-bar">
+            <button class="cert-filter-btn is-active" data-filter="all" type="button">
+              <span>All Credentials</span>
+              <span class="filter-count">9</span>
+            </button>
+            <button class="cert-filter-btn" data-filter="cybersecurity" type="button">
+              <span>Cybersecurity &amp; (ISC)²</span>
+              <span class="filter-count">7</span>
+            </button>
+            <button class="cert-filter-btn" data-filter="design" type="button">
+              <span>UI/UX &amp; Design</span>
+              <span class="filter-count">2</span>
+            </button>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="cert-carousel-nav">
+            <span class="carousel-counter" id="cert-carousel-counter">
+              <strong id="carousel-current">01</strong> <span class="counter-sep">/</span> <span id="carousel-total">09</span>
+            </span>
+            <div class="carousel-btn-group">
+              <button class="carousel-nav-btn carousel-prev-btn" id="cert-carousel-prev" type="button" aria-label="Previous certificate slide">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="carousel-nav-btn carousel-next-btn" id="cert-carousel-next" type="button" aria-label="Next certificate slide">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+              <button class="carousel-play-btn is-playing" id="cert-carousel-play" type="button" aria-label="Pause autoplay" title="Toggle autoplay">
+                <svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                  <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                  <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+                </svg>
+                <svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Viewport & Slider Track -->
+        <div class="cert-carousel-viewport" id="cert-carousel-viewport" tabindex="0" aria-label="Certificates carousel" role="region">
+          <div class="cert-carousel-track" id="cert-carousel-track">
+
+            <!-- Slide 0: Flagship Certified In Cybersecurity -->
+            <div class="cert-slide is-active" data-category="cybersecurity" data-index="0"
+              data-full="./certs/Certified In Cybersecurity_page-0001.jpg"
+              data-title="Certified in Cybersecurity (CC)"
+              data-issuer="(ISC)²"
+              data-badge="(ISC)² Certified"
+              data-subbadge="ANAB &amp; ACE Accredited"
+              data-date="Sep 20, 2026 (Valid 3 Years)"
+              data-id="dfe8a013-257e-453d-bb62-654f4d9a7a5d"
+              data-desc="Premier credential validating foundational mastery across all five core security domains: Security Principles, Incident Response &amp; DR, Access Controls, Network Security, and Security Operations.">
+              <article class="cert-slide-card tilt-card is-flagship">
+                <div class="cert-featured-badge-ribbon">
+                  <span>★ Flagship Credential</span>
+                </div>
+                <div class="cert-slide-grid">
+                  <div class="cert-slide-media cert-open-trigger" role="button" tabindex="0" aria-label="Enlarge Certified in Cybersecurity credential">
+                    <div class="cert-preview-img-frame">
+                      <img src="./certs/thumbs/Certified In Cybersecurity_page-0001.jpg" alt="(ISC)² Certified in Cybersecurity (CC) — Jael Dede Amoo" loading="eager" />
+                      <div class="cert-preview-overlay">
+                        <span class="overlay-glass-icon">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <span>Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-slide-content">
+                    <div class="cert-card-tag-row">
+                      <span class="cert-badge cert-badge-primary">(ISC)² Certified</span>
+                      <span class="cert-badge cert-badge-accredited">ANAB Accredited</span>
+                      <span class="cert-badge cert-badge-ace">ACE Recommended</span>
+                    </div>
+                    <h3 class="cert-slide-title">CC Certified in Cybersecurity</h3>
+                    <p class="cert-slide-desc">
+                      Official (ISC)² comprehensive credential validating mastery of information security principles, proactive defense, incident response, network isolation, and system security operations.
+                    </p>
+                    <div class="cert-featured-meta-grid">
+                      <div class="meta-item">
+                        <span class="meta-label">Issuer</span>
+                        <span class="meta-val">(ISC)² Official</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Issued Date</span>
+                        <span class="meta-val">20 / 09 / 2026</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Credential ID</span>
+                        <span class="meta-val id-code">dfe8a013-257e-453d-bb62-654f4d9a7a5d</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Validity</span>
+                        <span class="meta-val">3 Years (2026–2029)</span>
+                      </div>
+                    </div>
+                    <div class="cert-card-actions">
+                      <button class="button primary-button cert-open-btn" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>View Credential</span>
+                      </button>
+                      <a href="./certs/Certified In Cybersecurity_page-0001.jpg" target="_blank" rel="noreferrer" class="button outline-button cert-direct-btn">
+                        <span>Open High-Res</span>
+                        <span class="btn-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 1: Security Principles -->
+            <div class="cert-slide" data-category="cybersecurity" data-index="1"
+              data-full="./certs/Security Principles_page-0001.jpg"
+              data-title="CC Domain 1: Security Principles"
+              data-issuer="(ISC)²"
+              data-badge="(ISC)² Domain 1"
+              data-subbadge="ANAB Accredited"
+              data-date="06/07/2026"
+              data-id="dfe8a013-257e-453d-bb62-654f4d9a7a5d"
+              data-desc="Core competencies in the CIA Triad, Risk Management, Security Policies, Privacy Concepts, and Information Assurance Governance.">
+              <article class="cert-slide-card tilt-card">
+                <div class="cert-slide-grid">
+                  <div class="cert-slide-media cert-open-trigger" role="button" tabindex="0" aria-label="Enlarge Security Principles certificate">
+                    <div class="cert-preview-img-frame">
+                      <img src="./certs/thumbs/Security Principles_page-0001.jpg" alt="CC Domain 1: Security Principles — Jael Amoo" loading="lazy" />
+                      <div class="cert-preview-overlay">
+                        <span class="overlay-glass-icon">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <span>Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-slide-content">
+                    <div class="cert-card-tag-row">
+                      <span class="cert-badge cert-badge-primary">(ISC)²</span>
+                      <span class="cert-badge cert-badge-sub">Domain 1</span>
+                      <span class="cert-badge cert-badge-accredited">ANAB Accredited</span>
+                    </div>
+                    <h3 class="cert-slide-title">CC Domain 1: Security Principles</h3>
+                    <p class="cert-slide-desc">
+                      Foundational concepts covering the confidentiality, integrity, and availability (CIA) triad, risk identification, security governance, and corporate privacy frameworks.
+                    </p>
+                    <div class="cert-featured-meta-grid">
+                      <div class="meta-item">
+                        <span class="meta-label">Issuer</span>
+                        <span class="meta-val">(ISC)² Official</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Issued Date</span>
+                        <span class="meta-val">06 / 07 / 2026</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Credential ID</span>
+                        <span class="meta-val id-code">dfe8a013-257e-453d-bb62-654f4d9a7a5d</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Validity</span>
+                        <span class="meta-val">Valid for 3 Years</span>
+                      </div>
+                    </div>
+                    <div class="cert-card-actions">
+                      <button class="button primary-button cert-open-btn" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>View Credential</span>
+                      </button>
+                      <a href="./certs/Security Principles_page-0001.jpg" target="_blank" rel="noreferrer" class="button outline-button cert-direct-btn">
+                        <span>Open High-Res</span>
+                        <span class="btn-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 2: Incident Response, BC & DR -->
+            <div class="cert-slide" data-category="cybersecurity" data-index="2"
+              data-full="./certs/Incident Response, Business Continuity and Disaster Recovery Concepts_page-0001.jpg"
+              data-title="CC Domain 2: Incident Response, BC &amp; DR"
+              data-issuer="(ISC)²"
+              data-badge="(ISC)² Domain 2"
+              data-subbadge="ANAB Accredited"
+              data-date="2026"
+              data-id="dfe8a013-257e-453d-bb62-654f4d9a7a5d"
+              data-desc="Emergency incident handling, containment, business impact analysis (BIA), and disaster recovery restoration frameworks.">
+              <article class="cert-slide-card tilt-card">
+                <div class="cert-slide-grid">
+                  <div class="cert-slide-media cert-open-trigger" role="button" tabindex="0" aria-label="Enlarge Incident Response certificate">
+                    <div class="cert-preview-img-frame">
+                      <img src="./certs/thumbs/Incident Response, Business Continuity and Disaster Recovery Concepts_page-0001.jpg" alt="CC Domain 2: Incident Response, BC &amp; DR — Jael Dede Amoo" loading="lazy" />
+                      <div class="cert-preview-overlay">
+                        <span class="overlay-glass-icon">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <span>Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-slide-content">
+                    <div class="cert-card-tag-row">
+                      <span class="cert-badge cert-badge-primary">(ISC)²</span>
+                      <span class="cert-badge cert-badge-sub">Domain 2</span>
+                      <span class="cert-badge cert-badge-accredited">ANAB Accredited</span>
+                    </div>
+                    <h3 class="cert-slide-title">CC Domain 2: Incident Response, BC &amp; DR</h3>
+                    <p class="cert-slide-desc">
+                      Critical procedures for incident containment, triage, root-cause investigation, business continuity planning, and rapid disaster restoration operations.
+                    </p>
+                    <div class="cert-featured-meta-grid">
+                      <div class="meta-item">
+                        <span class="meta-label">Issuer</span>
+                        <span class="meta-val">(ISC)² Official</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Issued Date</span>
+                        <span class="meta-val">2026</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Credential ID</span>
+                        <span class="meta-val id-code">dfe8a013-257e-453d-bb62-654f4d9a7a5d</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Validity</span>
+                        <span class="meta-val">Valid for 3 Years</span>
+                      </div>
+                    </div>
+                    <div class="cert-card-actions">
+                      <button class="button primary-button cert-open-btn" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>View Credential</span>
+                      </button>
+                      <a href="./certs/Incident Response, Business Continuity and Disaster Recovery Concepts_page-0001.jpg" target="_blank" rel="noreferrer" class="button outline-button cert-direct-btn">
+                        <span>Open High-Res</span>
+                        <span class="btn-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 3: Network Security -->
+            <div class="cert-slide" data-category="cybersecurity" data-index="3"
+              data-full="./certs/Network Security_page-0001.jpg"
+              data-title="CC Domain 4: Network Security"
+              data-issuer="(ISC)²"
+              data-badge="(ISC)² Domain 4"
+              data-subbadge="ANAB Accredited"
+              data-date="07/09/2026"
+              data-id="dfe8a013-257e-453d-bb62-654f4d9a7a5d"
+              data-desc="Network defense architectures, TCP/IP stack security, subnetting, firewalls, threat vectors, and secure configurations.">
+              <article class="cert-slide-card tilt-card">
+                <div class="cert-slide-grid">
+                  <div class="cert-slide-media cert-open-trigger" role="button" tabindex="0" aria-label="Enlarge Network Security certificate">
+                    <div class="cert-preview-img-frame">
+                      <img src="./certs/thumbs/Network Security_page-0001.jpg" alt="CC Domain 4: Network Security — Jael Dede Amoo" loading="lazy" />
+                      <div class="cert-preview-overlay">
+                        <span class="overlay-glass-icon">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <span>Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-slide-content">
+                    <div class="cert-card-tag-row">
+                      <span class="cert-badge cert-badge-primary">(ISC)²</span>
+                      <span class="cert-badge cert-badge-sub">Domain 4</span>
+                      <span class="cert-badge cert-badge-accredited">ANAB Accredited</span>
+                    </div>
+                    <h3 class="cert-slide-title">CC Domain 4: Network Security</h3>
+                    <p class="cert-slide-desc">
+                      Rigorous technical concepts in OSI &amp; TCP/IP model defense, IP addressing, perimeter firewall filtering, port security, VPN encryption, and threat vector prevention.
+                    </p>
+                    <div class="cert-featured-meta-grid">
+                      <div class="meta-item">
+                        <span class="meta-label">Issuer</span>
+                        <span class="meta-val">(ISC)² Official</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Issued Date</span>
+                        <span class="meta-val">07 / 09 / 2026</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Credential ID</span>
+                        <span class="meta-val id-code">dfe8a013-257e-453d-bb62-654f4d9a7a5d</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Validity</span>
+                        <span class="meta-val">Valid for 3 Years</span>
+                      </div>
+                    </div>
+                    <div class="cert-card-actions">
+                      <button class="button primary-button cert-open-btn" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>View Credential</span>
+                      </button>
+                      <a href="./certs/Network Security_page-0001.jpg" target="_blank" rel="noreferrer" class="button outline-button cert-direct-btn">
+                        <span>Open High-Res</span>
+                        <span class="btn-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 4: Security Operations -->
+            <div class="cert-slide" data-category="cybersecurity" data-index="4"
+              data-full="./certs/Security Operations_page-0001.jpg"
+              data-title="CC Domain 5: Security Operations"
+              data-issuer="(ISC)²"
+              data-badge="(ISC)² Domain 5"
+              data-subbadge="ANAB Accredited"
+              data-date="20/09/2026"
+              data-id="dfe8a013-257e-453d-bb62-654f4d9a7a5d"
+              data-desc="Operational security, data protection controls, system hardening, monitoring, and enterprise policy enforcement.">
+              <article class="cert-slide-card tilt-card">
+                <div class="cert-slide-grid">
+                  <div class="cert-slide-media cert-open-trigger" role="button" tabindex="0" aria-label="Enlarge Security Operations certificate">
+                    <div class="cert-preview-img-frame">
+                      <img src="./certs/thumbs/Security Operations_page-0001.jpg" alt="CC Domain 5: Security Operations — Jael Dede Amoo" loading="lazy" />
+                      <div class="cert-preview-overlay">
+                        <span class="overlay-glass-icon">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <span>Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-slide-content">
+                    <div class="cert-card-tag-row">
+                      <span class="cert-badge cert-badge-primary">(ISC)²</span>
+                      <span class="cert-badge cert-badge-sub">Domain 5</span>
+                      <span class="cert-badge cert-badge-accredited">ANAB Accredited</span>
+                    </div>
+                    <h3 class="cert-slide-title">CC Domain 5: Security Operations</h3>
+                    <p class="cert-slide-desc">
+                      Day-to-day cybersecurity operations including system baseline hardening, log analysis, configuration change management, and security awareness.
+                    </p>
+                    <div class="cert-featured-meta-grid">
+                      <div class="meta-item">
+                        <span class="meta-label">Issuer</span>
+                        <span class="meta-val">(ISC)² Official</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Issued Date</span>
+                        <span class="meta-val">20 / 09 / 2026</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Credential ID</span>
+                        <span class="meta-val id-code">dfe8a013-257e-453d-bb62-654f4d9a7a5d</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Validity</span>
+                        <span class="meta-val">Valid for 3 Years</span>
+                      </div>
+                    </div>
+                    <div class="cert-card-actions">
+                      <button class="button primary-button cert-open-btn" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>View Credential</span>
+                      </button>
+                      <a href="./certs/Security Operations_page-0001.jpg" target="_blank" rel="noreferrer" class="button outline-button cert-direct-btn">
+                        <span>Open High-Res</span>
+                        <span class="btn-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 5: Course Conclusion & Final Assessment -->
+            <div class="cert-slide" data-category="cybersecurity" data-index="5"
+              data-full="./certs/Coure Conclusion &amp; Final Assessment_page-0001.jpg"
+              data-title="CC Course Conclusion &amp; Final Assessment"
+              data-issuer="(ISC)²"
+              data-badge="(ISC)² Assessment"
+              data-subbadge="Final Qualification"
+              data-date="2026"
+              data-id="dfe8a013-257e-453d-bb62-654f4d9a7a5d"
+              data-desc="Comprehensive summative assessment validating rigorous understanding across all Certified in Cybersecurity domains.">
+              <article class="cert-slide-card tilt-card">
+                <div class="cert-slide-grid">
+                  <div class="cert-slide-media cert-open-trigger" role="button" tabindex="0" aria-label="Enlarge Course Conclusion certificate">
+                    <div class="cert-preview-img-frame">
+                      <img src="./certs/thumbs/Coure Conclusion &amp; Final Assessment_page-0001.jpg" alt="CC Course Conclusion &amp; Final Assessment — Jael Dede Amoo" loading="lazy" />
+                      <div class="cert-preview-overlay">
+                        <span class="overlay-glass-icon">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <span>Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-slide-content">
+                    <div class="cert-card-tag-row">
+                      <span class="cert-badge cert-badge-primary">(ISC)²</span>
+                      <span class="cert-badge cert-badge-sub">Final Assessment</span>
+                      <span class="cert-badge cert-badge-accredited">Validated</span>
+                    </div>
+                    <h3 class="cert-slide-title">CC Course Conclusion &amp; Final Assessment</h3>
+                    <p class="cert-slide-desc">
+                      Summative milestone qualification certifying that the candidate has successfully completed and passed the official (ISC)² curriculum and assessment requirements.
+                    </p>
+                    <div class="cert-featured-meta-grid">
+                      <div class="meta-item">
+                        <span class="meta-label">Issuer</span>
+                        <span class="meta-val">(ISC)² Official</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Issued Date</span>
+                        <span class="meta-val">2026</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Credential ID</span>
+                        <span class="meta-val id-code">dfe8a013-257e-453d-bb62-654f4d9a7a5d</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Accreditation</span>
+                        <span class="meta-val">ANAB &amp; ACE</span>
+                      </div>
+                    </div>
+                    <div class="cert-card-actions">
+                      <button class="button primary-button cert-open-btn" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>View Credential</span>
+                      </button>
+                      <a href="./certs/Coure Conclusion &amp; Final Assessment_page-0001.jpg" target="_blank" rel="noreferrer" class="button outline-button cert-direct-btn">
+                        <span>Open High-Res</span>
+                        <span class="btn-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 6: Pre-Course Assessment -->
+            <div class="cert-slide" data-category="cybersecurity" data-index="6"
+              data-full="./certs/Pre-Course Assessment_page-0001.jpg"
+              data-title="CC Pre-Course Assessment"
+              data-issuer="(ISC)²"
+              data-badge="(ISC)² Assessment"
+              data-subbadge="Diagnostic Benchmark"
+              data-date="2026"
+              data-id="dfe8a013-257e-453d-bb62-654f4d9a7a5d"
+              data-desc="Evaluative baseline diagnostic assessing readiness and foundation in digital infrastructure security.">
+              <article class="cert-slide-card tilt-card">
+                <div class="cert-slide-grid">
+                  <div class="cert-slide-media cert-open-trigger" role="button" tabindex="0" aria-label="Enlarge Pre-Course Assessment certificate">
+                    <div class="cert-preview-img-frame">
+                      <img src="./certs/thumbs/Pre-Course Assessment_page-0001.jpg" alt="CC Pre-Course Assessment — Jael Dede Amoo" loading="lazy" />
+                      <div class="cert-preview-overlay">
+                        <span class="overlay-glass-icon">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <span>Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-slide-content">
+                    <div class="cert-card-tag-row">
+                      <span class="cert-badge cert-badge-primary">(ISC)²</span>
+                      <span class="cert-badge cert-badge-sub">Diagnostic</span>
+                      <span class="cert-badge cert-badge-accredited">ANAB Accredited</span>
+                    </div>
+                    <h3 class="cert-slide-title">CC Pre-Course Assessment</h3>
+                    <p class="cert-slide-desc">
+                      Official diagnostic benchmark measuring baseline entry comprehension across computing principles, system defense fundamentals, and technical readiness.
+                    </p>
+                    <div class="cert-featured-meta-grid">
+                      <div class="meta-item">
+                        <span class="meta-label">Issuer</span>
+                        <span class="meta-val">(ISC)² Official</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Issued Date</span>
+                        <span class="meta-val">2026</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Credential ID</span>
+                        <span class="meta-val id-code">dfe8a013-257e-453d-bb62-654f4d9a7a5d</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Type</span>
+                        <span class="meta-val">Benchmark Evaluation</span>
+                      </div>
+                    </div>
+                    <div class="cert-card-actions">
+                      <button class="button primary-button cert-open-btn" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>View Credential</span>
+                      </button>
+                      <a href="./certs/Pre-Course Assessment_page-0001.jpg" target="_blank" rel="noreferrer" class="button outline-button cert-direct-btn">
+                        <span>Open High-Res</span>
+                        <span class="btn-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 7: Figma UI UX Design Essentials -->
+            <div class="cert-slide" data-category="design" data-index="7"
+              data-full="./certs/Figma Essentials_page-0001.jpg"
+              data-title="Figma UI UX Design Essentials"
+              data-issuer="Udemy (Daniel Walter Scott)"
+              data-badge="Udemy Certified"
+              data-subbadge="UI/UX Essentials"
+              data-date="July 11, 2026"
+              data-id="UC-13980851-573c-4b95-811c-dc7b8ea1d656"
+              data-desc="Comprehensive UI/UX design workflow: wireframing, component libraries, layout grids, and interactive prototyping.">
+              <article class="cert-slide-card tilt-card">
+                <div class="cert-slide-grid">
+                  <div class="cert-slide-media cert-open-trigger" role="button" tabindex="0" aria-label="Enlarge Figma Essentials certificate">
+                    <div class="cert-preview-img-frame">
+                      <img src="./certs/thumbs/Figma Essentials_page-0001.jpg" alt="Figma UI UX Design Essentials — Amoo Jael Dede" loading="lazy" />
+                      <div class="cert-preview-overlay">
+                        <span class="overlay-glass-icon">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <span>Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-slide-content">
+                    <div class="cert-card-tag-row">
+                      <span class="cert-badge cert-badge-design">Udemy</span>
+                      <span class="cert-badge cert-badge-sub">UI/UX Design</span>
+                      <span class="cert-badge cert-badge-sub">9.5 Hours</span>
+                    </div>
+                    <h3 class="cert-slide-title">Figma UI UX Design Essentials</h3>
+                    <p class="cert-slide-desc">
+                      Comprehensive design masterclass by Daniel Walter Scott covering user research, wireframing, layout grid systems, interactive prototypes, design tokens, and developer handoff.
+                    </p>
+                    <div class="cert-featured-meta-grid">
+                      <div class="meta-item">
+                        <span class="meta-label">Issuer</span>
+                        <span class="meta-val">Udemy (Daniel Walter Scott)</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Completed</span>
+                        <span class="meta-val">July 11, 2026</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Certificate No.</span>
+                        <span class="meta-val id-code">UC-13980851-573c-4b95-811c-dc7b8ea1d656</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Course Duration</span>
+                        <span class="meta-val">9.5 Total Hours</span>
+                      </div>
+                    </div>
+                    <div class="cert-card-actions">
+                      <button class="button primary-button cert-open-btn" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>View Credential</span>
+                      </button>
+                      <a href="./certs/Figma Essentials_page-0001.jpg" target="_blank" rel="noreferrer" class="button outline-button cert-direct-btn">
+                        <span>Open High-Res</span>
+                        <span class="btn-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 8: Figma UI UX Design Advanced -->
+            <div class="cert-slide" data-category="design" data-index="8"
+              data-full="./certs/figma Advanced_page-0001.jpg"
+              data-title="Figma UI UX Design Advanced"
+              data-issuer="Udemy (Daniel Walter Scott)"
+              data-badge="Udemy Certified"
+              data-subbadge="Advanced Design Systems"
+              data-date="Dec 31, 2025"
+              data-id="UC-9a557e5c-cacb-40a0-b905-f0ffa0101c22"
+              data-desc="Advanced auto-layout systems, dynamic variants, micro-interaction transitions, and enterprise design system architecture.">
+              <article class="cert-slide-card tilt-card">
+                <div class="cert-slide-grid">
+                  <div class="cert-slide-media cert-open-trigger" role="button" tabindex="0" aria-label="Enlarge Figma Advanced certificate">
+                    <div class="cert-preview-img-frame">
+                      <img src="./certs/thumbs/figma Advanced_page-0001.jpg" alt="Figma UI UX Design Advanced — Amoo Jael Dede" loading="lazy" />
+                      <div class="cert-preview-overlay">
+                        <span class="overlay-glass-icon">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                          </svg>
+                        </span>
+                        <span>Click to Enlarge</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cert-slide-content">
+                    <div class="cert-card-tag-row">
+                      <span class="cert-badge cert-badge-design">Udemy</span>
+                      <span class="cert-badge cert-badge-sub">Advanced UI/UX</span>
+                      <span class="cert-badge cert-badge-sub">9.0 Hours</span>
+                    </div>
+                    <h3 class="cert-slide-title">Figma UI UX Design Advanced</h3>
+                    <p class="cert-slide-desc">
+                      Advanced design systems engineering: nested auto-layouts, multi-state interactive component variants, smart animations, design variables, and production-ready design architectures.
+                    </p>
+                    <div class="cert-featured-meta-grid">
+                      <div class="meta-item">
+                        <span class="meta-label">Issuer</span>
+                        <span class="meta-val">Udemy (Daniel Walter Scott)</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Completed</span>
+                        <span class="meta-val">Dec 31, 2025</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Certificate No.</span>
+                        <span class="meta-val id-code">UC-9a557e5c-cacb-40a0-b905-f0ffa0101c22</span>
+                      </div>
+                      <div class="meta-item">
+                        <span class="meta-label">Course Duration</span>
+                        <span class="meta-val">9.0 Total Hours</span>
+                      </div>
+                    </div>
+                    <div class="cert-card-actions">
+                      <button class="button primary-button cert-open-btn" type="button">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>View Credential</span>
+                      </button>
+                      <a href="./certs/figma Advanced_page-0001.jpg" target="_blank" rel="noreferrer" class="button outline-button cert-direct-btn">
+                        <span>Open High-Res</span>
+                        <span class="btn-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Carousel Pagination Dots -->
+        <div class="cert-carousel-pagination" id="cert-carousel-dots" role="tablist" aria-label="Certificate slides navigation">
+          <!-- Dots will be populated / updated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT & CONNECT STAGE -->
+    <section class="full-section stage-section" id="contact">
+      <div class="section-bg-deco" aria-hidden="true">
+        <div class="deco-number">05</div>
+      </div>
+
+      <div class="stage-container reveal-on-scroll">
+        <div class="section-header">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            05 // LET'S WORK TOGETHER
           </div>
           <h2 class="section-title">Get in touch.</h2>
           <p class="section-subtitle">
@@ -639,6 +1421,68 @@
     </section>
 
   </main>
+
+  <!-- Certificate Lightbox Modal -->
+  <div class="cert-lightbox" id="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate Full Preview" aria-hidden="true">
+    <div class="lightbox-overlay" id="lightbox-overlay"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" id="lightbox-close-btn" type="button" aria-label="Close certificate preview">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev-btn" type="button" aria-label="Previous certificate">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next-btn" type="button" aria-label="Next certificate">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="lightbox-card">
+        <div class="lightbox-media-wrap">
+          <img src="" alt="" id="lightbox-img" class="lightbox-img" />
+          <div class="lightbox-spinner" id="lightbox-spinner" aria-hidden="true">
+            <span class="spin-circle"></span>
+          </div>
+        </div>
+
+        <div class="lightbox-meta-bar">
+          <div class="lightbox-meta-left">
+            <div class="lightbox-tag-row">
+              <span class="cert-badge cert-badge-primary" id="lightbox-badge">(ISC)² Certified</span>
+              <span class="cert-badge cert-badge-sub" id="lightbox-sub-badge">Accredited</span>
+            </div>
+            <h3 class="lightbox-title" id="lightbox-title">Certificate Title</h3>
+            <p class="lightbox-desc" id="lightbox-desc">Detailed certificate description.</p>
+            <div class="lightbox-details-list">
+              <span class="detail-item"><strong id="lightbox-issuer-label">Issuer:</strong> <span id="lightbox-issuer">(ISC)²</span></span>
+              <span class="detail-sep">•</span>
+              <span class="detail-item"><strong>Date:</strong> <span id="lightbox-date">Sep 2026</span></span>
+              <span class="detail-sep">•</span>
+              <span class="detail-item"><strong>ID:</strong> <code id="lightbox-id" class="id-snippet">dfe8a013...</code></span>
+            </div>
+          </div>
+          <div class="lightbox-meta-right">
+            <a href="" target="_blank" rel="noreferrer" class="button primary-button lightbox-full-btn" id="lightbox-full-link">
+              <span>Open Original</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Floating Social Sidebar -->
   <aside class="floating-socials" id="floating-socials" aria-label="Social media links">
